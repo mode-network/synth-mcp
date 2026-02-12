@@ -8,6 +8,7 @@ import { encodeFormQuery } from "../lib/encodings.js";
 import { compactMap } from "../lib/primitives.js";
 import { safeParse } from "../lib/schemas.js";
 import { RequestOptions } from "../lib/sdks.js";
+import { extractSecurity, resolveGlobalSecurity } from "../lib/security.js";
 import { pathToFunc } from "../lib/url.js";
 import { APIError } from "../models/errors/apierror.js";
 import {
@@ -93,14 +94,16 @@ async function $do(
   const headers$ = new Headers(compactMap({
     Accept: "application/json",
   }));
+  const securityInput = await extractSecurity(client$._options.security);
+  const requestSecurity = resolveGlobalSecurity(securityInput);
 
   const context = {
     options: client$._options,
     baseURL: options?.serverURL ?? client$._baseURL ?? "",
     operationID: "get_/insights/lp-bounds",
     oAuth2Scopes: null,
-    resolvedSecurity: null,
-    securitySource: null,
+    resolvedSecurity: requestSecurity,
+    securitySource: client$._options.security,
     retryConfig: options?.retries
       || client$._options.retryConfig
       || { strategy: "none" },
@@ -114,6 +117,7 @@ async function $do(
   };
 
   const requestRes = client$._createRequest(context, {
+    security: requestSecurity,
     method: "GET",
     baseURL: options?.serverURL,
     path: path$,

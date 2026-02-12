@@ -3,6 +3,7 @@
  * @generated-id: 320761608fb3
  */
 
+import { Security } from "../models/security.js";
 import { HTTPClient } from "./http.js";
 import { Logger } from "./logger.js";
 import { RetryConfig } from "./retries.js";
@@ -16,6 +17,11 @@ export const ServerList = [
 ] as const;
 
 export type SDKOptions = {
+  /**
+   * The security details required to authenticate the SDK
+   */
+  security?: Security | (() => Promise<Security>) | undefined;
+
   httpClient?: HTTPClient;
   /**
    * Allows overriding the default server used by the SDK
@@ -57,7 +63,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "1.0",
-  sdkVersion: "0.0.5",
+  sdkVersion: "0.1.0",
   genVersion: "2.821.4",
-  userAgent: "speakeasy-sdk/mcp-typescript 0.0.5 2.821.4 1.0 synth-mcp",
+  userAgent: "speakeasy-sdk/mcp-typescript 0.1.0 2.821.4 1.0 synth-mcp",
 } as const;

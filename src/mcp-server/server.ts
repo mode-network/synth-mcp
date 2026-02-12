@@ -31,15 +31,17 @@ export function createMCPServer(deps: {
   scopes?: MCPScope[] | undefined;
   getSDK?: () => SynthCore;
   serverURL: string;
+  security?: SDKOptions["security"] | undefined;
   serverIdx?: SDKOptions["serverIdx"] | undefined;
 }) {
   const server = new McpServer({
     name: "Synth",
-    version: "0.0.5",
+    version: "0.1.0",
   });
 
   const getClient = deps.getSDK || (() =>
     new SynthCore({
+      security: deps.security,
       serverURL: deps.serverURL,
       serverIdx: deps.serverIdx,
       debugLogger: deps.logger.level === "debug"

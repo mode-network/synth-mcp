@@ -53,6 +53,7 @@ async function startStdio(flags: StartCommandFlags) {
     logger,
     allowedTools: flags.tool,
     dynamic: flags.mode === "dynamic",
+    security: { bearerAuth: flags["bearer-auth"] ?? "" },
     serverURL: flags["server-url"],
     serverIdx: flags["server-index"],
   });
@@ -92,6 +93,9 @@ async function startSSE(cliFlags: StartCommandFlags) {
     // Merge CLI flags with header overrides for security credentials
     const flags: StartCommandFlags = {
       ...cliFlags,
+      // Security fields can be overridden via headers
+      "bearer-auth": (req.headers["bearerAuth"] as string)
+        ?? cliFlags["bearer-auth"],
     };
 
     // Create a new MCP server for this connection with its auth
@@ -99,6 +103,7 @@ async function startSSE(cliFlags: StartCommandFlags) {
       logger,
       allowedTools: flags.tool,
       dynamic: flags.mode === "dynamic",
+      security: { bearerAuth: flags["bearer-auth"] ?? "" },
       serverURL: flags["server-url"],
       serverIdx: flags["server-index"],
     });

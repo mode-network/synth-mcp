@@ -8,10 +8,14 @@ import { dlv } from "./dlv.js";
 import * as z from "zod";
 
 export interface Env {
+  SYNTH_BEARER_AUTH?: string | undefined;
+
   SYNTH_DEBUG?: boolean | undefined;
 }
 
 export const envSchema: z.ZodType<Env> = z.object({
+  SYNTH_BEARER_AUTH: z.string().optional(),
+
   SYNTH_DEBUG: z.coerce.boolean().optional(),
 });
 

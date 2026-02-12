@@ -3,6 +3,9 @@
  * @generated-id: 0502afa7922e
  */
 
+import { Security } from "../models/security.js";
+import { env } from "./env.js";
+
 type OAuth2PasswordFlow = {
   username: string;
   password: string;
@@ -232,4 +235,27 @@ function applyBearer(
   if (spec.fieldName !== undefined) {
     state.headers[spec.fieldName] = value;
   }
+}
+export function resolveGlobalSecurity(
+  security: Partial<Security> | null | undefined,
+): SecurityState | null {
+  return resolveSecurity(
+    [
+      {
+        fieldName: "Authorization",
+        type: "http:bearer",
+        value: security?.bearerAuth || env().SYNTH_BEARER_AUTH,
+      },
+    ],
+  );
+}
+
+export async function extractSecurity<
+  T extends string | Record<string, unknown>,
+>(sec: T | (() => Promise<T>) | undefined): Promise<T | undefined> {
+  if (sec == null) {
+    return;
+  }
+
+  return typeof sec === "function" ? sec() : sec;
 }

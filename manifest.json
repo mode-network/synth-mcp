@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.3",
   "name": "synth-mcp",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "",
   "long_description": "SN50 | Synth API: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.",
   "author": {
@@ -16,7 +16,9 @@
         "${__dirname}/bin/mcp-server.js",
         "start",
         "--server-url",
-        "${user_config.server_url}"
+        "${user_config.server_url}",
+        "--bearer-auth",
+        "${user_config.bearer_auth}"
       ]
     }
   },
@@ -34,6 +36,13 @@
       "title": "Server URL",
       "description": "The URL of the server to connect to",
       "required": true
+    },
+    "bearer_auth": {
+      "type": "string",
+      "title": "bearerAuth",
+      "description": "The bearerAuth to use for the request",
+      "required": true,
+      "sensitive": true
     }
   },
   "tools": [

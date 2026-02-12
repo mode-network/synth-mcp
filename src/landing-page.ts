@@ -33,12 +33,17 @@ export function landingPageHTML(origin: string): string {
       `${o}/sse`,
       "--header",
       "server-url:${SERVER_URL}",
+      "--header",
+      "bearer-auth:${BEARER_AUTH}",
     ],
-    "env": { "SERVER_URL": "YOUR_VALUE_HERE" },
+    "env": {
+      "SERVER_URL": "YOUR_VALUE_HERE",
+      "BEARER_AUTH": "YOUR_VALUE_HERE",
+    },
   };
   const codexConfig = `[mcp_servers.Synth]
 url = "${o}/sse"
-http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
+http_headers = { "server-url" = "YOUR_SERVER_URL", "bearer-auth" = "YOUR_BEARER_AUTH" }`;
 
   return `
 <!DOCTYPE html>
@@ -676,7 +681,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
                   </svg>
                 </button>
                 <div class="popover-menu hidden" id="popover-menu">
-                  <a class="popover-button install-link" href="cursor://anysphere.cursor-deeplink/mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiJdfQ==">
+                  <a class="popover-button install-link" href="cursor://anysphere.cursor-deeplink/mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiIsIi0tYmVhcmVyLWF1dGgiLCIiXX0=">
                     Cursor
                   </a>
                   <button class="popover-button" onclick="showModal('claude-code')">
@@ -685,7 +690,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
                   <button class="popover-button" onclick="showModal('claude-desktop')">
                     Claude Desktop
                   </button>
-                  <a class="popover-button install-link" href="vscode://ms-vscode.vscode-mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiJdfQ==">
+                  <a class="popover-button install-link" href="vscode://ms-vscode.vscode-mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiIsIi0tYmVhcmVyLWF1dGgiLCIiXX0=">
                     VS Code
                   </a>
                   <button class="popover-button" onclick="showModal('gemini')">
@@ -708,7 +713,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
             </div>
           </header>
           <div class="install-targets">
-            <a tabindex="0" class="card install-target install-link" href="cursor://anysphere.cursor-deeplink/mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiJdfQ==">
+            <a tabindex="0" class="card install-target install-link" href="cursor://anysphere.cursor-deeplink/mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiIsIi0tYmVhcmVyLWF1dGgiLCIiXX0=">
               <div class="target">
                 <img src="https://cursor.com/assets/images/logo.svg" alt="Cursor">
                 <span>Cursor</span>
@@ -730,7 +735,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
                 <span>Claude Desktop</span>
               </div>
             </div>
-            <a tabindex="0" class="card install-target install-link" href="vscode://ms-vscode.vscode-mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiJdfQ==">
+            <a tabindex="0" class="card install-target install-link" href="vscode://ms-vscode.vscode-mcp/install?name=Synth&config=eyJjb21tYW5kIjoibnB4IiwiYXJncyI6WyJzeW50aC1tY3AiLCJzdGFydCIsIi0tc2VydmVyLXVybCIsIiIsIi0tYmVhcmVyLWF1dGgiLCIiXX0=">
               <div class="target">
                 <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
@@ -909,7 +914,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
               <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
             </svg>
           </button>
-          <code class="code-snippet language-json" id="claude-cli-cmd">claude mcp add Synth -- npx -y synth-mcp start --server-url </code>
+          <code class="code-snippet language-json" id="claude-cli-cmd">claude mcp add Synth -- npx -y synth-mcp start --server-url  --bearer-auth </code>
         </div>
       </div>
     </div>
@@ -960,7 +965,7 @@ http_headers = { "server-url" = "YOUR_SERVER_URL" }`;
               <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path>
             </svg>
           </button>
-          <code class="code-snippet language-json" id="gemini-config">gemini mcp add Synth -- npx -y synth-mcp start --server-url </code>
+          <code class="code-snippet language-json" id="gemini-config">gemini mcp add Synth -- npx -y synth-mcp start --server-url  --bearer-auth </code>
         </div>
       </div>
     </div>
