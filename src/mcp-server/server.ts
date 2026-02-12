@@ -36,7 +36,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Synth",
-    version: "0.0.8",
+    version: "0.0.9",
   });
 
   const getClient = deps.getSDK || (() =>
