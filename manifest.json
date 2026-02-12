@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.3",
   "name": "synth-mcp",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "",
   "long_description": "SN50 | Synth API: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.",
   "author": {
@@ -72,46 +72,6 @@
     {
       "name": "get-prediction-percentiles",
       "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles over the forecast horizon."
-    },
-    {
-      "name": "get-v2-leaderboard-historical",
-      "description": "Leaderboard -  Leaderboard History V2\n\nGets the leaderboard history."
-    },
-    {
-      "name": "get-v2-leaderboard-latest",
-      "description": "Leaderboard - Latest Leaderboard V2\n\nGets the current leaderboard."
-    },
-    {
-      "name": "get-v2-meta-leaderboard-historical",
-      "description": "Leaderboard - Meta-Leaderboard History V2\n\nGets the meta-leaderboard history, which aggregates miners' incentives over a period of days in the past."
-    },
-    {
-      "name": "get-v2-meta-leaderboard-latest",
-      "description": "Leaderboard - Latest Meta-Leaderboard V2\n\nGet the current meta-leaderboard, which aggregates miners' incentives over a period of days. This provides another way to rank prediction accuracy, thereby increasing stability."
-    },
-    {
-      "name": "get-v2-prediction-best",
-      "description": "Predictions - Best Prediction Rates\n\nGets the latest prediction rates of the current best miner."
-    },
-    {
-      "name": "get-v2-prediction-historical",
-      "description": "Predictions - Historical Prediction Rates\n\nGets the historical prediction rates."
-    },
-    {
-      "name": "get-v2-prediction-latest",
-      "description": "Predictions - Latest Prediction Rates\n\nGets the latest valid prediction rates."
-    },
-    {
-      "name": "get-validation-miner",
-      "description": "Validations - Miner Validation\n\nGets the validation status for a specific miner"
-    },
-    {
-      "name": "get-validation-scores-historical",
-      "description": "Validations - Historical Scores\n\nGets the validation scores for all miners between two dates"
-    },
-    {
-      "name": "get-validation-scores-latest",
-      "description": "Validations - Latest Scores\n\nGets the most recent validation scores for all miners"
     }
   ]
 }

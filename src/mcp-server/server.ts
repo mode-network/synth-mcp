@@ -23,16 +23,6 @@ import { tool$getInsightsPolymarketUpDownDaily } from "./tools/getInsightsPolyma
 import { tool$getInsightsPolymarketUpDownHourly } from "./tools/getInsightsPolymarketUpDownHourly.js";
 import { tool$getInsightsVolatility } from "./tools/getInsightsVolatility.js";
 import { tool$getPredictionPercentiles } from "./tools/getPredictionPercentiles.js";
-import { tool$getV2LeaderboardHistorical } from "./tools/getV2LeaderboardHistorical.js";
-import { tool$getV2LeaderboardLatest } from "./tools/getV2LeaderboardLatest.js";
-import { tool$getV2MetaLeaderboardHistorical } from "./tools/getV2MetaLeaderboardHistorical.js";
-import { tool$getV2MetaLeaderboardLatest } from "./tools/getV2MetaLeaderboardLatest.js";
-import { tool$getV2PredictionBest } from "./tools/getV2PredictionBest.js";
-import { tool$getV2PredictionHistorical } from "./tools/getV2PredictionHistorical.js";
-import { tool$getV2PredictionLatest } from "./tools/getV2PredictionLatest.js";
-import { tool$getValidationMiner } from "./tools/getValidationMiner.js";
-import { tool$getValidationScoresHistorical } from "./tools/getValidationScoresHistorical.js";
-import { tool$getValidationScoresLatest } from "./tools/getValidationScoresLatest.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -45,7 +35,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Synth",
-    version: "0.0.4",
+    version: "0.0.5",
   });
 
   const getClient = deps.getSDK || (() =>
@@ -97,16 +87,6 @@ export function createMCPServer(deps: {
   tool(tool$getInsightsPolymarketUpDownHourly);
   tool(tool$getInsightsVolatility);
   tool(tool$getPredictionPercentiles);
-  tool(tool$getV2LeaderboardHistorical);
-  tool(tool$getV2LeaderboardLatest);
-  tool(tool$getV2MetaLeaderboardHistorical);
-  tool(tool$getV2MetaLeaderboardLatest);
-  tool(tool$getV2PredictionBest);
-  tool(tool$getV2PredictionHistorical);
-  tool(tool$getV2PredictionLatest);
-  tool(tool$getValidationMiner);
-  tool(tool$getValidationScoresHistorical);
-  tool(tool$getValidationScoresLatest);
 
   if (deps.dynamic) {
     registerDynamicTools(deps.logger, server, getClient, toolMap, scopes);
