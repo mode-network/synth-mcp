@@ -1,0 +1,117 @@
+{
+  "manifest_version": "0.3",
+  "name": "synth-mcp",
+  "version": "0.0.1",
+  "description": "",
+  "long_description": "SN50 | Synth API: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.",
+  "author": {
+    "name": "Speakeasy"
+  },
+  "server": {
+    "type": "node",
+    "entry_point": "./bin/mcp-server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/bin/mcp-server.js",
+        "start",
+        "--server-url",
+        "${user_config.server_url}"
+      ]
+    }
+  },
+  "display_name": "Synth Mcp",
+  "prompts": [],
+  "keywords": [
+    "synth",
+    "mcp",
+    "api",
+    "the"
+  ],
+  "user_config": {
+    "server_url": {
+      "type": "string",
+      "title": "Server URL",
+      "description": "The URL of the server to connect to",
+      "required": true
+    }
+  },
+  "tools": [
+    {
+      "name": "get-insights-liquidation",
+      "description": "Insight - Liquidation probability\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the probability of liquidation in 6, 12, 18 and 24 hours for different price levels."
+    },
+    {
+      "name": "get-insights-lp-bounds",
+      "description": "Insight - Liquidity provider bounds\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate price intervals and probability to stay in each interval for the next 24 hours, expected time to stay in each interval and impermanent loss."
+    },
+    {
+      "name": "get-insights-lp-probabilities",
+      "description": "Insight - Liquidity provider probabilities\n\nCalculate the probability of asset price to be above 11 prices and bellow 11 prices."
+    },
+    {
+      "name": "get-insights-option-pricing",
+      "description": "Insight - Option pricing\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the call and put prices for different strike prices."
+    },
+    {
+      "name": "get-insights-polymarket-range",
+      "description": "Insight - Polymarket price range\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome for each range."
+    },
+    {
+      "name": "get-insights-polymarket-up-down-daily",
+      "description": "Insight - Polymarket up/down daily\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome."
+    },
+    {
+      "name": "get-insights-polymarket-up-down-hourly",
+      "description": "Insight - Polymarket up/down hourly\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome."
+    },
+    {
+      "name": "get-insights-volatility",
+      "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the volatility."
+    },
+    {
+      "name": "get-prediction-percentiles",
+      "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles over the forecast horizon."
+    },
+    {
+      "name": "get-v2-leaderboard-historical",
+      "description": "Leaderboard -  Leaderboard History V2\n\nGets the leaderboard history."
+    },
+    {
+      "name": "get-v2-leaderboard-latest",
+      "description": "Leaderboard - Latest Leaderboard V2\n\nGets the current leaderboard."
+    },
+    {
+      "name": "get-v2-meta-leaderboard-historical",
+      "description": "Leaderboard - Meta-Leaderboard History V2\n\nGets the meta-leaderboard history, which aggregates miners' incentives over a period of days in the past."
+    },
+    {
+      "name": "get-v2-meta-leaderboard-latest",
+      "description": "Leaderboard - Latest Meta-Leaderboard V2\n\nGet the current meta-leaderboard, which aggregates miners' incentives over a period of days. This provides another way to rank prediction accuracy, thereby increasing stability."
+    },
+    {
+      "name": "get-v2-prediction-best",
+      "description": "Predictions - Best Prediction Rates\n\nGets the latest prediction rates of the current best miner."
+    },
+    {
+      "name": "get-v2-prediction-historical",
+      "description": "Predictions - Historical Prediction Rates\n\nGets the historical prediction rates."
+    },
+    {
+      "name": "get-v2-prediction-latest",
+      "description": "Predictions - Latest Prediction Rates\n\nGets the latest valid prediction rates."
+    },
+    {
+      "name": "get-validation-miner",
+      "description": "Validations - Miner Validation\n\nGets the validation status for a specific miner"
+    },
+    {
+      "name": "get-validation-scores-historical",
+      "description": "Validations - Historical Scores\n\nGets the validation scores for all miners between two dates"
+    },
+    {
+      "name": "get-validation-scores-latest",
+      "description": "Validations - Latest Scores\n\nGets the most recent validation scores for all miners"
+    }
+  ]
+}

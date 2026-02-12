@@ -1,0 +1,757 @@
+lockVersion: 2.0.0
+id: aefbfd95-3898-417a-81f2-07292e60b44f
+management:
+  docChecksum: 361fb175b9a8beb564c04d5af97b6af2
+  docVersion: "1.0"
+  speakeasyVersion: 1.713.1
+  generationVersion: 2.821.4
+  releaseVersion: 0.0.1
+  configChecksum: d9d85496ef8119953425568f97575cdc
+persistentEdits:
+  generation_id: e938c284-2861-4439-9ee7-89210ed47013
+  pristine_commit_hash: 79a498022736c9b3cd44b94d1fe0256e8c4bb4b4
+  pristine_tree_hash: 55cd55a3e472f080fafbabd4870bc350c4d90525
+features:
+  mcp-typescript:
+    additionalDependencies: 0.1.0
+    core: 1.2.6
+    defaultEnabledRetries: 0.1.0
+    globalSecurityCallbacks: 0.0.0
+    globalServerURLs: 0.1.1
+    responseFormat: 0.1.1
+    retries: 0.1.0
+    sdkHooks: 0.3.0
+trackedFiles:
+  .dxtignore:
+    id: 0ee1c4f92736
+    last_write_checksum: sha1:0cbab1b303d9060f6324f6a9cddabe13c2cfa7c9
+    pristine_git_object: 21eeace1d85822ffb013f6c0667a19f35c33cee0
+  .gitattributes:
+    id: 24139dae6567
+    last_write_checksum: sha1:26d16d8297b104945139da8c25bd38feeaad3e25
+    pristine_git_object: 113eead5093c17d43a46159132885318f281a68a
+  .npmignore:
+    id: aa70c1f807c3
+    last_write_checksum: sha1:31ba03a712796b133695c4c410504b6824e09506
+    pristine_git_object: 146d4cc4e80691410519da81c141ce381d30c265
+  eslint.config.mjs:
+    id: 461c8d07f6da
+    last_write_checksum: sha1:576025302d3d8650f37276bc9075f6ade3842cc7
+    pristine_git_object: 4f9e60a9462fc4def738d60c3aaadf8232ef185f
+  manifest.json:
+    id: ca642a226869
+    last_write_checksum: sha1:21138c9ae5a4bf3e9d155afa57904daff2fc3c77
+    pristine_git_object: f408c10fd0ce892418e3174a8cc491325461e404
+  package.json:
+    id: 7030d0b2f71b
+    last_write_checksum: sha1:d5c72b5d86e074150430e0240e4c7792e5230bf5
+    pristine_git_object: 9221de573b35c7b0f6c21096c5b50570efb9129f
+  src/core.ts:
+    id: f431fdbcd144
+    last_write_checksum: sha1:033d451e842a5d567fc168ce0499a3faf3ab09d8
+    pristine_git_object: 0bdf3ca6c4b90932c7cc50d4d8355a63491e867c
+  src/funcs/getInsightsLiquidation.ts:
+    id: 4cbc0068023c
+    last_write_checksum: sha1:8dfde58bb4fb38048d0740e7d1dec49820be1739
+    pristine_git_object: e58710ab4d62a79bb4d1bcc592e53c125361eedd
+  src/funcs/getInsightsLpBounds.ts:
+    id: b46e418fc124
+    last_write_checksum: sha1:36926596290a01c51fb270b8e9185af5638d031e
+    pristine_git_object: aa1f817c7721b919b90daa3391abc5006052ecd2
+  src/funcs/getInsightsLpProbabilities.ts:
+    id: 294a644ad66c
+    last_write_checksum: sha1:00f8fbe4e369ec1b43f2946383cf4868d55c380d
+    pristine_git_object: cdbf1f6ec3e2d1ff3e7e875471b6af3d4438ff42
+  src/funcs/getInsightsOptionPricing.ts:
+    id: 8851f887a8f2
+    last_write_checksum: sha1:9fed2188a6288acb7b7189229513297906201f7c
+    pristine_git_object: 648815e49e7905171724567091b3a4e03896c693
+  src/funcs/getInsightsPolymarketRange.ts:
+    id: ca0d759efa03
+    last_write_checksum: sha1:ebbe3fc3df9a9ea24b472fb6107c7e043f838341
+    pristine_git_object: caaf2037dd8d01178550ffa3fc010a2e8f18b4ba
+  src/funcs/getInsightsPolymarketUpDownDaily.ts:
+    id: ef191c6656c9
+    last_write_checksum: sha1:1685d9c0bae7604fbabd86b1b013fd4f92147c03
+    pristine_git_object: 4dfa6024a823fe8f8f79a80ac73de8a0106e7033
+  src/funcs/getInsightsPolymarketUpDownHourly.ts:
+    id: e9e94a5dc60c
+    last_write_checksum: sha1:d9c692aff69bd872a14dcebe2e63e16b90d9763d
+    pristine_git_object: d94ec7929789d90f98bfcacb28ab7179e9959747
+  src/funcs/getInsightsVolatility.ts:
+    id: a7a7c9b3a923
+    last_write_checksum: sha1:553ac02458bcb4bdc6f13468e135b54ef047086c
+    pristine_git_object: 4039167965de165fac329c0902de1cb0d58f3144
+  src/funcs/getPredictionPercentiles.ts:
+    id: 16dab8c4ec54
+    last_write_checksum: sha1:6c6dba120d599b703a9964e71795b03e4df6f1d4
+    pristine_git_object: 30487570ca16b5b6dc2280df2d0bfb948d67fdc7
+  src/funcs/getV2LeaderboardHistorical.ts:
+    id: 246774bbdb76
+    last_write_checksum: sha1:f05b388697345b63540e075fca64b159b1aa998d
+    pristine_git_object: a27b78cf9814fec03b9bd20d720ffef5014f82ff
+  src/funcs/getV2LeaderboardLatest.ts:
+    id: 1185351c82d2
+    last_write_checksum: sha1:513066d7fb6a9bc6a99937b30f535cbb355860b7
+    pristine_git_object: 8a2936130b17b68dabcf73af361ce367e0f6f23f
+  src/funcs/getV2MetaLeaderboardHistorical.ts:
+    id: 34ed98c97311
+    last_write_checksum: sha1:e4b1914fd7632eb28fc12e533896f326427e47e3
+    pristine_git_object: 691ba3173ea35bb221ef7a08febd6b3405c7f380
+  src/funcs/getV2MetaLeaderboardLatest.ts:
+    id: fd110fb8d4bb
+    last_write_checksum: sha1:07d95b56d2a4e06d5e6a640ecc7ec51c350aab07
+    pristine_git_object: 70bb3aeedf21a7a75f22a81307dc7d2aeafb2b40
+  src/funcs/getV2PredictionBest.ts:
+    id: fd305f31a05c
+    last_write_checksum: sha1:4fdcc326cc6c4889e49648dc126f0d201581cae3
+    pristine_git_object: 2b7a579a3f19ba12aae95eb22d0e24a44a3b110e
+  src/funcs/getV2PredictionHistorical.ts:
+    id: 314bbb14fa4b
+    last_write_checksum: sha1:f0228010e487f65c43e1361739688b4c3a344688
+    pristine_git_object: 4cb0bc650e50ae30cb4820928cfbf2f9cbf3a08d
+  src/funcs/getV2PredictionLatest.ts:
+    id: 8d16bf2090a0
+    last_write_checksum: sha1:d39d23da3555b9c682aaa71d28af763c69496ff4
+    pristine_git_object: f5487725be3455729d83bdd01decb0beff7168dc
+  src/funcs/getValidationMiner.ts:
+    id: 3dfddfa8b58d
+    last_write_checksum: sha1:3083cd7540f6da82be4f0e3e33b0bd61852c1427
+    pristine_git_object: 51667fecf7ff6173fd237a92a002254d771579af
+  src/funcs/getValidationScoresHistorical.ts:
+    id: 78187b343a73
+    last_write_checksum: sha1:33105b27eea2988bb22e19e0db121a226c608fc7
+    pristine_git_object: 2017dcbe4e02fb9bd270f24e3610543fd2074bc3
+  src/funcs/getValidationScoresLatest.ts:
+    id: 67472209c0ca
+    last_write_checksum: sha1:3681ee4e04c2ee92d5729ffaf5172afa77535dea
+    pristine_git_object: 2590c43e40dd9ffffef2f6959d88a57ed768c9b3
+  src/hooks/hooks.ts:
+    id: a2463fc6f69b
+    last_write_checksum: sha1:327ed0fa581be991d633155a30a13e502caa80ef
+    pristine_git_object: 7709c66d855a856043daf58e863129c4dd437b6f
+  src/hooks/types.ts:
+    id: 2a02d86ec24f
+    last_write_checksum: sha1:27a3444c4839bec58ae89820fd8c2483edafc3f4
+    pristine_git_object: 9c36bf01332084f735909a71036c3544cc4c7e3a
+  src/landing-page.ts:
+    id: ef64a6ee46d7
+    last_write_checksum: sha1:f90c38237f672d2d0b883903f47b0556f4d51169
+    pristine_git_object: 60795d30ea4f83a07718c6863e4aeec99273c989
+  src/lib/base64.ts:
+    id: "598522066688"
+    last_write_checksum: sha1:e9f04a037018040361043104960982f7c22db52d
+    pristine_git_object: d4bd8b341290e7a828a171d840bd0b0fff7c7cd7
+  src/lib/config.ts:
+    id: 320761608fb3
+    last_write_checksum: sha1:a3a2536918031726b7a141d9e3c7b34c75046d5b
+    pristine_git_object: 4f174e89bb0128bc4fd8c785b375434a5891e87b
+  src/lib/dlv.ts:
+    id: b1988214835a
+    last_write_checksum: sha1:1dd3e3fbb4550c4bf31f5ef997faff355d6f3250
+    pristine_git_object: e81091f5e536f82739f71379b1fddc2d147c49e2
+  src/lib/encodings.ts:
+    id: 3bd8ead98afd
+    last_write_checksum: sha1:c042529292568e18a69a04c1be7e18588ccd3821
+    pristine_git_object: 4495783e008be951066aee565964077cac1321d7
+  src/lib/env.ts:
+    id: c52972a3b198
+    last_write_checksum: sha1:41df91b850b9e0ee00194b2fe5eb27cc20067db5
+    pristine_git_object: 23c1eea42f738b95c19f8620c639e24f3783bf53
+  src/lib/files.ts:
+    id: e5efa54fcb95
+    last_write_checksum: sha1:d0f325f445b8d22e7d73baf052c585ec2dd24841
+    pristine_git_object: 0344cd046d033f9e8a55de02f7935c5cec5dc30b
+  src/lib/http.ts:
+    id: 63a80782d37e
+    last_write_checksum: sha1:797cbf16d3c7c4d62d3ba0eedb08617524938457
+    pristine_git_object: 13cf1fd7894a89f727b8d2db2ad24313a94f68c7
+  src/lib/is-plain-object.ts:
+    id: b9862591096a
+    last_write_checksum: sha1:df687f25a9590b6fd95d39df41a652ae3fd4e517
+    pristine_git_object: 61070d3d7c7e5e95b1ed7e7ea21869eb0767db77
+  src/lib/logger.ts:
+    id: 7ee7741a02bf
+    last_write_checksum: sha1:0ec9d3a2a34c362746b767e4f9a746c055d57a7b
+    pristine_git_object: d181f2937d4128afbe9b0327e0f81d1fa9c877b7
+  src/lib/primitives.ts:
+    id: 74859f750b28
+    last_write_checksum: sha1:d5fbb4e2feef5747fc8071046bdd4122c87bd066
+    pristine_git_object: 668ab9d500d77bee730a619c5fda4a1d3cd1d16c
+  src/lib/result.ts:
+    id: ab7a4c1c4c71
+    last_write_checksum: sha1:d24994d58f37a1ca106847fcc6d2e976c6f1c093
+    pristine_git_object: ccbe51eac69dfb0da5131f14fd753c4b47c1d527
+  src/lib/retries.ts:
+    id: b24a69d15639
+    last_write_checksum: sha1:f3da74dffcbe2756c69393f8600205aa1dc06e68
+    pristine_git_object: e3ce9aba72150fc3c18f3105d39b21aba809377b
+  src/lib/schemas.ts:
+    id: deb4b531fae1
+    last_write_checksum: sha1:7c7ba40781682f6d44bb585b5016e2527b52660e
+    pristine_git_object: 542d9972403c5bc4aa70619f8c4b0af3ef2ce679
+  src/lib/sdks.ts:
+    id: 8a6d91f1218d
+    last_write_checksum: sha1:5586c53d882e87841eabadd3b9d8d0b9ed939854
+    pristine_git_object: 17b5d1fc9605188a1001145b99a422a7bdf5211f
+  src/lib/security.ts:
+    id: 0502afa7922e
+    last_write_checksum: sha1:bcea52c9dc6a19454eda01814dcd2691e7a8c662
+    pristine_git_object: 78f56b04000e9dfb65a4068249bfb539222efd99
+  src/lib/url.ts:
+    id: b0057e24ed76
+    last_write_checksum: sha1:9550819577dc1e514e61496167aefcc137238aaf
+    pristine_git_object: 6bc6356e222c4f2c20fda5616e00be6dadfa80f8
+  src/mcp-server/build.mts:
+    id: f7a2ed2de4d7
+    last_write_checksum: sha1:9f98fe2b333bd6211cfffa008a9b6ee95d523596
+    pristine_git_object: e8114fbaed6521c628b7cf58a22cdb65e61a5483
+  src/mcp-server/cli.ts:
+    id: 4ade0ef98b00
+    last_write_checksum: sha1:7331efddde881832342fa8779d23be7445d4480c
+    pristine_git_object: b878d8de9f2a0275c3cdbfdcaed48a31092e558a
+  src/mcp-server/cli/start/command.ts:
+    id: b3e53408ccb4
+    last_write_checksum: sha1:17bc9f415f794c4f27968faaa69d9312946583bf
+    pristine_git_object: 23d248eb9edb6f453f00c2ee5506b66bf4838ed7
+  src/mcp-server/cli/start/impl.ts:
+    id: 37494f674015
+    last_write_checksum: sha1:66f85285f19bd16a0d077d3336767ea35cc8dcd6
+    pristine_git_object: c00da56b3e8a6d3733c43c51c12dcaf9c7d4639c
+  src/mcp-server/console-logger.ts:
+    id: 57aff4ff2e15
+    last_write_checksum: sha1:0c4b9b7c79ad0a81359210cb31b9ee4d887d5de1
+    pristine_git_object: 640bca96dc5acf142b0a25dedad7ffb5d55c6375
+  src/mcp-server/extensions.ts:
+    id: 3d9d20ff158f
+    last_write_checksum: sha1:27de1e2b8aaedc8965d1d4c4d4c500df1f28b483
+    pristine_git_object: 78394e413ea070824f370b829eaf1416883e6680
+  src/mcp-server/flags.ts:
+    id: 0167e624a516
+    last_write_checksum: sha1:93430f8a7123946c3b082891c716820c7ab06d75
+    pristine_git_object: f31739b65f655c9af16308e4b655d6a8f3a9f9a5
+  src/mcp-server/mcp-server.ts:
+    id: aabbc4ab07c1
+    last_write_checksum: sha1:d2401496879f437672e2ce60da9b099397ef7c87
+    pristine_git_object: 4f70eadadaca597ad57b666cd59c082e81e89673
+  src/mcp-server/prompts.ts:
+    id: 26f3d73cbf31
+    last_write_checksum: sha1:944c5d0bbc3db82f517b8281d125b4667d98a6c6
+    pristine_git_object: 23eba5ed849d31d5382d309e69a36444bb0ef8a7
+  src/mcp-server/resources.ts:
+    id: cb0c57ebeaea
+    last_write_checksum: sha1:189ba62b4e980798ed63ab80c6d62a4fc9cf26b1
+    pristine_git_object: 74c25fb04347da00c6637bda26ba9e03f297c5bd
+  src/mcp-server/scopes.ts:
+    id: 8966d24256b2
+    last_write_checksum: sha1:77d0eb95785e84f9fd0b27c4612f8c6470489fe4
+    pristine_git_object: c25696d4c4f70e081fa5d87ad6891874c509a577
+  src/mcp-server/server.ts:
+    id: 2784dd48e82a
+    last_write_checksum: sha1:29581ada160dd9feaa27ab2421b53ec8a55cacbc
+    pristine_git_object: ceea10cf3798954a76105349d42227ce434c5814
+  src/mcp-server/shared.ts:
+    id: 074e80d4be1e
+    last_write_checksum: sha1:19c9034032819a14f15c430de4350c8aba99d725
+    pristine_git_object: bb74a74788ebd7d11262f5f63b8fdd29ab817f48
+  src/mcp-server/tools.ts:
+    id: 654d5d1f2062
+    last_write_checksum: sha1:566aaa2e71cc3fd7355a41fa2fb370576717687c
+    pristine_git_object: 057538d896bce6e0d085cb850cba352414846e1c
+  src/mcp-server/tools/getInsightsLiquidation.ts:
+    id: 836207daae21
+    last_write_checksum: sha1:13cf47856c7d160dfbaf703b5925635b7cc94f71
+    pristine_git_object: 64fe66bb9783dcba53c2dca5846211b443748feb
+  src/mcp-server/tools/getInsightsLpBounds.ts:
+    id: dfed045b7d32
+    last_write_checksum: sha1:6b2448fdd286ee927975405ec077659627a3fb7b
+    pristine_git_object: 05e5d2ad25701d3bf2fe193b3e7307cc82982238
+  src/mcp-server/tools/getInsightsLpProbabilities.ts:
+    id: 36dd8388723b
+    last_write_checksum: sha1:69afba8fb93a2d13003ad6dcee7a32a336da6b19
+    pristine_git_object: 4d5f6ed34eeda1e34a75c76c8b1167e75a4d1f12
+  src/mcp-server/tools/getInsightsOptionPricing.ts:
+    id: 87a055b0d027
+    last_write_checksum: sha1:c0ef81a404952b93c2abe93d2d1d09012a0fa2ba
+    pristine_git_object: 54d51fc0295db95d8102213e80df1be4bb1e1f4b
+  src/mcp-server/tools/getInsightsPolymarketRange.ts:
+    id: 1eb8cd660eb1
+    last_write_checksum: sha1:e8f61e3f4b0dacbf5fdfb15c8edf1453cdbfece5
+    pristine_git_object: b945be86ae1c0b809dee736f8cf3bad962876570
+  src/mcp-server/tools/getInsightsPolymarketUpDownDaily.ts:
+    id: 68d48f874d49
+    last_write_checksum: sha1:1b6f57ad335da87ab07f196a53db6e828afd6466
+    pristine_git_object: d4bc7a2f6ee274402209d38a4a3a55f2700df547
+  src/mcp-server/tools/getInsightsPolymarketUpDownHourly.ts:
+    id: f9c78bf6a832
+    last_write_checksum: sha1:3f668c3b277f2bb456ef08b91a8a7b463ded78de
+    pristine_git_object: 751d68e5e63294916d6ea992146ab10ef507664a
+  src/mcp-server/tools/getInsightsVolatility.ts:
+    id: 236e430e069f
+    last_write_checksum: sha1:54682a2eb48d605168254a5634444d78b3188e35
+    pristine_git_object: 07aea9795d4ea79e7726b37ef4317c0f523a1420
+  src/mcp-server/tools/getPredictionPercentiles.ts:
+    id: bf93d6f7db51
+    last_write_checksum: sha1:7926486b806416f99323eba6513508a5397899f1
+    pristine_git_object: 2dd332e00e60e30faea6254213169fc1ebcd1375
+  src/mcp-server/tools/getV2LeaderboardHistorical.ts:
+    id: ddac7ece5130
+    last_write_checksum: sha1:4658abd15753ee03745bfae662a700f1146271e0
+    pristine_git_object: 736c44ffad56cfd0e3e19d48d7edfda1d081a3cb
+  src/mcp-server/tools/getV2LeaderboardLatest.ts:
+    id: 456f6e4763b5
+    last_write_checksum: sha1:66a71c31378ed1342f3972b06816498d6b68c9f4
+    pristine_git_object: d1ea6f6b20730890ffdbb1332f02e88b5a9cd0ec
+  src/mcp-server/tools/getV2MetaLeaderboardHistorical.ts:
+    id: a9db5cc5850f
+    last_write_checksum: sha1:960515da65f7ba3b3cbc6de5687cb3da693d91a5
+    pristine_git_object: fead34ab3594d41fdb0149f60d3a891f5fcd9192
+  src/mcp-server/tools/getV2MetaLeaderboardLatest.ts:
+    id: 9a4b5527acf8
+    last_write_checksum: sha1:bba3fcb697d9462753ff49531c6f92302aef6330
+    pristine_git_object: e22ce9ba13f1c02ecff13449e0863f2bc1e8c58b
+  src/mcp-server/tools/getV2PredictionBest.ts:
+    id: 9bdc68fbee96
+    last_write_checksum: sha1:fbf1a62b5d902ccec26a19cdc7af534bbee403d6
+    pristine_git_object: 41b80f39fde6adabb81b1758ceeec97fa515c44c
+  src/mcp-server/tools/getV2PredictionHistorical.ts:
+    id: 676edfdda9ad
+    last_write_checksum: sha1:0068456566fac1e4b12ff5bc025bdb7859afaf4f
+    pristine_git_object: dd85c721df048264992c0f585a2ec2a127bad4a9
+  src/mcp-server/tools/getV2PredictionLatest.ts:
+    id: 8ef4e3f46d8f
+    last_write_checksum: sha1:850ca7d33be8a3f56f1a7f3b288bcb2fd1acb743
+    pristine_git_object: 72d3b7c36795a472779c793b9ce43b53ce2dc3f9
+  src/mcp-server/tools/getValidationMiner.ts:
+    id: 8341a11e344e
+    last_write_checksum: sha1:ef48df49bb9fbcbc6664d9a7db6f1405822ebc7f
+    pristine_git_object: daec24e3299beef4a145bed0392f3beda161d524
+  src/mcp-server/tools/getValidationScoresHistorical.ts:
+    id: c7160ec1333c
+    last_write_checksum: sha1:ee69b46260b89f593db8bd2d759a4e7bc87b8a25
+    pristine_git_object: ceacc9f0fcbf450a1f19451009a1a7f86c2701b9
+  src/mcp-server/tools/getValidationScoresLatest.ts:
+    id: 4f1659a2be7a
+    last_write_checksum: sha1:508bbf1a85dd5d5a38118797269da6fc647154e7
+    pristine_git_object: 437aeafce60d7aaf4bb5c1479159db5798d97ef6
+  src/models/errors/apierror.ts:
+    id: e2280e075454
+    last_write_checksum: sha1:1a4199dec47757c19b2e88dbd767d7f24ab9522a
+    pristine_git_object: 7e098c1187dbd81288c0d2cd8802dfff25a295bf
+  src/models/errors/httpclienterrors.ts:
+    id: 6948de76af99
+    last_write_checksum: sha1:994ced121c54fecd0af038ccfb7855fbfd3868ec
+    pristine_git_object: b34f612124c797c2a1106b9735708f679a90b74f
+  src/models/errors/sdkvalidationerror.ts:
+    id: fb6b2b49c445
+    last_write_checksum: sha1:ce8bb73a1243f8ea8fa3b71a181e586e29dd02c9
+    pristine_git_object: 7749cf32c29ba2d44124253d9f07fbb1913b89f6
+  src/models/getinsightsliquidationop.ts:
+    id: de46aeb04e42
+    last_write_checksum: sha1:ff063b53abb1dfb36688a5732aed3693a336ce7b
+    pristine_git_object: 72b1dfc62d4f158123e40d1853c2ed7eb09b8e2b
+  src/models/getinsightslpboundsop.ts:
+    id: deaa17e70a78
+    last_write_checksum: sha1:61f7d0528817ad7c7215235390d3d53a16e04730
+    pristine_git_object: d1b74cb88a8fac31e40b790d42dd904eac9029e1
+  src/models/getinsightslpprobabilitiesop.ts:
+    id: 1e3500bc08a4
+    last_write_checksum: sha1:48caaad16dbe9a927a48057bbc1f4f72dcb583da
+    pristine_git_object: 959331e5e9359157bdbb8d0e9f17e6030bbb4bbd
+  src/models/getinsightsoptionpricingop.ts:
+    id: d34ee6640bd2
+    last_write_checksum: sha1:6a46f99e1ca40efa7ef1164b333fffb7a7811571
+    pristine_git_object: 40baf79a8c29c8b65a5a95d4e7613b4b988fa59e
+  src/models/getinsightspolymarketrangeop.ts:
+    id: 1e271dd44cbd
+    last_write_checksum: sha1:b595923396f19506f99aa52571ed6d349c8321af
+    pristine_git_object: c56f6c050b2d2724e9ccf41f9da9e6f150fd58b5
+  src/models/getinsightspolymarketupdowndailyop.ts:
+    id: 9454a94e059e
+    last_write_checksum: sha1:50c323301c2d5750406648c175ca67be67d55a91
+    pristine_git_object: 0d4041a4325462ac4165a17c9d8aa02aaff87aed
+  src/models/getinsightspolymarketupdownhourlyop.ts:
+    id: fc81f0e8562c
+    last_write_checksum: sha1:5289954c3e6980190051b3560698bfa7319403ed
+    pristine_git_object: 0baceed989cae026771938b566141e63ead48f86
+  src/models/getinsightsvolatilityop.ts:
+    id: f0d137fb07d6
+    last_write_checksum: sha1:11ee0d2cf7cbd76cf4deaf4b92f6845794c950b4
+    pristine_git_object: eaa91d9a8149a078df235407aebb9b88f0feae1a
+  src/models/getpredictionpercentilesop.ts:
+    id: cd221da1e939
+    last_write_checksum: sha1:cbded8ec763896f3047dfc1f682fc4efc4695068
+    pristine_git_object: 2c8354c326d874a045065a63993e88bacca10d66
+  src/models/getv2leaderboardhistoricalop.ts:
+    id: 02043ef41026
+    last_write_checksum: sha1:bab4d18fa007f9b547002b3bf04297f80225c91e
+    pristine_git_object: 5590e82ebb4015acd0c40e12f33bc0fec4d61c48
+  src/models/getv2leaderboardlatestop.ts:
+    id: d4ed7f06a94f
+    last_write_checksum: sha1:544fdd78481c11ae78c3d62429270ed00ff86623
+    pristine_git_object: 27939d2002a64ac4c55a23a606870687762c630e
+  src/models/getv2metaleaderboardhistoricalop.ts:
+    id: 3dd0a5b03724
+    last_write_checksum: sha1:19fba4fa85c402530cf4b2b14f31425c662a6248
+    pristine_git_object: 00d15663536e5b4ad41ddd83ab3f0c04b4a57ddd
+  src/models/getv2metaleaderboardlatestop.ts:
+    id: eb2c81b26ab7
+    last_write_checksum: sha1:960cd61afb8c7b5c18d1cba97cd317a1ed988075
+    pristine_git_object: b15cb2df74b671b4890d6cfd939576c4c07e385a
+  src/models/getv2predictionbestop.ts:
+    id: d29b09f4f5f7
+    last_write_checksum: sha1:8cb45ebc12967747afc940d6b5d47cff377a2656
+    pristine_git_object: 977d1c0efe3f127d589797ae8575cc1926e15a76
+  src/models/getv2predictionhistoricalop.ts:
+    id: ac33edb30694
+    last_write_checksum: sha1:f43698096ed9411b63ed5fe0060fc4936648af19
+    pristine_git_object: 90898914c65f27c364696be2237d4ad9ee22644f
+  src/models/getv2predictionlatestop.ts:
+    id: f99a2fc5bc22
+    last_write_checksum: sha1:c1020a0887cc72b523860e7eb4e0df8f6bc91d5a
+    pristine_git_object: 4f920c3063ca3caad1c9ecfe7b1a623766cc7e8a
+  src/models/getvalidationminerop.ts:
+    id: 0461796515d2
+    last_write_checksum: sha1:8dc3ee5602704030f97c40e1bacd4573499ba445
+    pristine_git_object: 9bd03747a14c2e8130b7a020ec840c48139f2f36
+  src/models/getvalidationscoreshistoricalop.ts:
+    id: 3f01fc254165
+    last_write_checksum: sha1:f6fadf221033f7c72e5df8284aeb010446de5f56
+    pristine_git_object: 61fdb3d591511d2263e8d61a020e34e39f78a2d4
+  src/models/getvalidationscoreslatestop.ts:
+    id: 368b3cff71b3
+    last_write_checksum: sha1:f59017232bb4f151957aa87a6c0a2f8631d438e1
+    pristine_git_object: bf4c1b938854e5429d4ebe00d2638516299ba435
+  src/models/typesforecast.ts:
+    id: 18c02bf6f06b
+    last_write_checksum: sha1:b9683d141807482770c12bd97272297a6b34da7c
+    pristine_git_object: e8fe5976c2e99979c4184c6f8a46847e9b246afb
+  src/models/typesforecastdatatyped.ts:
+    id: 0771be3e97bb
+    last_write_checksum: sha1:0bd2c06b653ad57c428c9f94c6f454a57e3a618d
+    pristine_git_object: 76e7e4f9dd4e2471534c6323eab6f8b368796deb
+  src/models/typeshourlyprobability.ts:
+    id: a2aa70254416
+    last_write_checksum: sha1:7be2f95fec7202eea1cb53716213f581f7761e48
+    pristine_git_object: ea093bf55bf6e4e304a241d4b251a4e9b7b73b68
+  src/models/typesinterval.ts:
+    id: 013ffc72af87
+    last_write_checksum: sha1:f48529ce085e36e0e458e91d8e57709195ece0f5
+    pristine_git_object: 9cb087ada4a6fdc4a9ea51805e446a9541ea67a7
+  src/models/typesintervaldata.ts:
+    id: 5200cc42f571
+    last_write_checksum: sha1:af48ec783fe1a4b381481a2aff43a2a2fcde7b52
+    pristine_git_object: d2c4da04b97f1533d1516aa570d7a4279795d2ca
+  src/models/typesleaderboarditemv2.ts:
+    id: f680a4d3a4ce
+    last_write_checksum: sha1:f7a7bda57355726f9093790e220f769524add73d
+    pristine_git_object: ab9e8f9ca043057aaef8c871e6f896211074e7c9
+  src/models/typesliquidationprobability.ts:
+    id: 5974c841306c
+    last_write_checksum: sha1:80b68f3a0a2242b7ad6de4a718d45c6cdaca4570
+    pristine_git_object: 3e271e2102ba25dc2e9172807d23f99fe7e5f28b
+  src/models/typesliquidationprobabilityresponse.ts:
+    id: 2565d6273f57
+    last_write_checksum: sha1:c168e2199f8a9b46f16b40289f5321e4fcb46f2a
+    pristine_git_object: 1037933e263f2f4918197e84a5176d6bd5808372
+  src/models/typeslpboundsresponse.ts:
+    id: 03f5f09a7b6a
+    last_write_checksum: sha1:20d79b1cc90d5551b77c9a1ca1e53f87bc4ddd60
+    pristine_git_object: ec11e979e07fd99a2a3a2a61c94015fc77e0fe28
+  src/models/typeslpprobabilitiesresponse.ts:
+    id: 30309d983d43
+    last_write_checksum: sha1:a78a58a4b23d093d720ee4cebd252135c1be5289
+    pristine_git_object: 9ce2db90727c9a13634acdf121776ee64f559fcf
+  src/models/typesminervalidationresponse.ts:
+    id: e54aefd0ddae
+    last_write_checksum: sha1:7b579797bc059cbccd01b87cd1e2b221d4c19b4c
+    pristine_git_object: 06aef67595baf03b01f8cd9da0b7a98bf817029c
+  src/models/typesoptionpricingresponse.ts:
+    id: d5cb59b03112
+    last_write_checksum: sha1:940872a1b4cd431d5f222224cf5bf8cb61a5263f
+    pristine_git_object: acb5d65a0808632b22168c34cf33f4c3d2f1110c
+  src/models/typespercentiletyped.ts:
+    id: c749758c8737
+    last_write_checksum: sha1:d61f247cf42df706c3a52313a5744eea8bd1b44d
+    pristine_git_object: 3b9770e445386170ba62abe40e9bf440de3ba066
+  src/models/typespolymarketupdownresponse.ts:
+    id: 059d78bddc06
+    last_write_checksum: sha1:0f78a0e191c1ffe7f3df69e2dea6cd4ca7faa9bd
+    pristine_git_object: 6e62df67e8f0322c8d289f1228f017ded7030060
+  src/models/typespredictionpercentiles.ts:
+    id: f59fd7f5876e
+    last_write_checksum: sha1:f56f148d1039204d9b7a64e00a30b8d4b9924b87
+    pristine_git_object: 94ca813e29dd0fccf5cf81f4573d807ea96edec9
+  src/models/typespredictionresponse.ts:
+    id: dc2a3cbff715
+    last_write_checksum: sha1:9d66e73e28b0bbf76a0ba2c80de8a8e279c58377
+    pristine_git_object: 1a9cc9c429f6cf9f599b89015c1db8142d008871
+  src/models/typespriceprobabilitydata.ts:
+    id: 2b4ccec58e5d
+    last_write_checksum: sha1:4708c9855ddfdeab1b7cff8755661e04760c69ed
+    pristine_git_object: 3ddae0f9393d9936fd49b2c7d49d588d08a6d516
+  src/models/typespricerangemarket.ts:
+    id: ec83cb19212a
+    last_write_checksum: sha1:80a0cbb7ebf87a0d5037eb3fcf94db1be8e50777
+    pristine_git_object: fc9611c5541d098f84744a28c1dd26e429168c7f
+  src/models/typespricereturn.ts:
+    id: 1e8d61a60be7
+    last_write_checksum: sha1:e2662cb938a3674a93e135ab8715da196e52e2f6
+    pristine_git_object: 93c5f96fe203ffad3ae72469a4ac6bb7e2e30653
+  src/models/typesprobabilitydirection.ts:
+    id: 037f1f371e4b
+    last_write_checksum: sha1:4c8da4c4611a2cc176e7ad1b5d2cfa2bc395eb29
+    pristine_git_object: bfd2dd142dc84f16460f1988a63ac97b45c112fe
+  src/models/typesrealized.ts:
+    id: d9cbef81ef01
+    last_write_checksum: sha1:a8e0ac382e8a5371dcd79ce98c7d474411c7c6bc
+    pristine_git_object: 508363b61b0d3e07055115c44256f7ec34ec17d1
+  src/models/typesstayinintervalprobability.ts:
+    id: 061b0a3c4b0f
+    last_write_checksum: sha1:5fe83e2e42d0ed075589442453d55882df237015
+    pristine_git_object: e6bc443e7dffb97db54a7476d8661f4dd64b03bb
+  src/models/typesvalidationscore.ts:
+    id: 1675acae7bbf
+    last_write_checksum: sha1:edb35480fbe3d86d9f6fd993e1bce14ca0dca99d
+    pristine_git_object: 6d35ccaa42fb3111216c9b12f7a19286bb17d616
+  src/models/typesvolatilityresponse.ts:
+    id: 92f8183f93af
+    last_write_checksum: sha1:49fb7969a5f240c9f97cb5519b5d48845c4e7298
+    pristine_git_object: c2fa171b0e27fb593554b39568400a503c1b4cba
+  src/tool-names.ts:
+    id: a9977280f9eb
+    last_write_checksum: sha1:4c49555b89022c9c8ad6315337a419c5ecc04f0f
+    pristine_git_object: a23727e45e94ad6bd88b688d894e955d4a401102
+  src/types/async.ts:
+    id: fac8da972f86
+    last_write_checksum: sha1:3ff07b3feaf390ec1aeb18ff938e139c6c4a9585
+    pristine_git_object: 689dba5de50e8769e5f3bb913e3f42a146d15bc1
+  src/types/bigint.ts:
+    id: 3ca6e3280e43
+    last_write_checksum: sha1:58178437a7d38f022b5d9bef691ba5539fad4655
+    pristine_git_object: f32ee5fe6a2dbf82bd2d1ec7c17cd2987bcff1d6
+  src/types/blobs.ts:
+    id: f8ab9b326c86
+    last_write_checksum: sha1:9cc86e0e9420999afb48d53c57d71584be745fd7
+    pristine_git_object: c1cc513af4ca0e96d1525954241592e3f57711bb
+  src/types/enums.ts:
+    id: 4d03ddfe5100
+    last_write_checksum: sha1:384e3fc4bee3f006cd8f39556a44b3508597b8e5
+    pristine_git_object: 6fb6d9109d8a9f27160bdb3a20456a5c3a608a51
+  src/types/fp.ts:
+    id: ae9f0fb8aab6
+    last_write_checksum: sha1:d24994d58f37a1ca106847fcc6d2e976c6f1c093
+    pristine_git_object: ccbe51eac69dfb0da5131f14fd753c4b47c1d527
+  src/types/rfcdate.ts:
+    id: 9eb64906dcd6
+    last_write_checksum: sha1:8e5f382e02fe21c2f2e24deb1b7bbf8cddd3dd16
+    pristine_git_object: c79b3f53a3dd922aa2ace5a4191c8652cf9a8e89
+  src/types/streams.ts:
+    id: f99be9c4bf14
+    last_write_checksum: sha1:cc9ced2dd34a76c3a1bd7784ccda1cc3b37ab9a9
+    pristine_git_object: a0163e7a99cea88f21d0ad4ce3af1c720180ee20
+  tsconfig.json:
+    id: 61ebb9fd6e8c
+    last_write_checksum: sha1:2a1769fabf9e934fa0b118db46d3b66cb500a6b7
+    pristine_git_object: 0ca48942a1b9cd923d614985dfb81f0dc7e1d298
+examples:
+  get_/insights/liquidation:
+    speakeasy-default-get-/insights/liquidation:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/lp-bounds:
+    speakeasy-default-get-/insights/lp-bounds:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/lp-probabilities:
+    speakeasy-default-get-/insights/lp-probabilities:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/option-pricing:
+    speakeasy-default-get-/insights/option-pricing:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/polymarket/range:
+    speakeasy-default-get-/insights/polymarket/range:
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/polymarket/up-down/daily:
+    speakeasy-default-get-/insights/polymarket/up-down/daily:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/polymarket/up-down/hourly:
+    speakeasy-default-get-/insights/polymarket/up-down/hourly:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/volatility:
+    speakeasy-default-get-/insights/volatility:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/prediction-percentiles:
+    speakeasy-default-get-/prediction-percentiles:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/v2/leaderboard/historical:
+    speakeasy-default-get-/v2-/leaderboard/historical:
+      parameters:
+        query:
+          start_time: "<value>"
+          end_time: "<value>"
+      responses:
+        "200":
+          application/json: [{}]
+        "500":
+          application/json: "<value>"
+  get_/v2/leaderboard/latest:
+    speakeasy-default-get-/v2-/leaderboard/latest:
+      responses:
+        "200":
+          application/json: [{}]
+        "500":
+          application/json: "<value>"
+  get_/v2/meta-leaderboard/historical:
+    speakeasy-default-get-/v2-/meta-leaderboard/historical:
+      parameters:
+        query:
+          start_time: "<value>"
+      responses:
+        "200":
+          application/json: [{}]
+        "500":
+          application/json: "<value>"
+  get_/v2/meta-leaderboard/latest:
+    speakeasy-default-get-/v2-/meta-leaderboard/latest:
+      responses:
+        "200":
+          application/json: [{}]
+        "500":
+          application/json: "<value>"
+  get_/v2/prediction/best:
+    speakeasy-default-get-/v2-/prediction/best:
+      parameters:
+        query:
+          asset: "<value>"
+          time_increment: 781462
+          time_length: 950220
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "404":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/v2/prediction/historical:
+    speakeasy-default-get-/v2-/prediction/historical:
+      parameters:
+        query:
+          miner: [832439]
+          asset: "<value>"
+          start_time: "<value>"
+          time_increment: 606269
+          time_length: 129285
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "404":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/v2/prediction/latest:
+    speakeasy-default-get-/v2-/prediction/latest:
+      parameters:
+        query:
+          miner: [788254]
+          asset: "<value>"
+          time_increment: 898904
+          time_length: 662330
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "404":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/validation/miner:
+    speakeasy-default-get-/validation/miner:
+      parameters:
+        query:
+          uid: 488339
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/validation/scores/historical:
+    speakeasy-default-get-/validation/scores/historical:
+      parameters:
+        query:
+          from: "<value>"
+          to: "<value>"
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/validation/scores/latest:
+    speakeasy-default-get-/validation/scores/latest:
+      responses:
+        "200":
+          application/json: [{}]
+        "500":
+          application/json: "<value>"
+examplesVersion: 1.0.2

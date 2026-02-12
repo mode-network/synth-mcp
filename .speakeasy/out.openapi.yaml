@@ -1,0 +1,1387 @@
+openapi: 3.0.0
+info:
+  title: SN50 | Synth API
+  version: "1.0"
+  description: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.
+  contact:
+    url: https://synthdata.co
+paths:
+  /insights/liquidation:
+    get:
+      summary: Insight - Liquidation probability
+      description: It selects the top 'limit' miners from the the meta-leaderboard to calculate the probability of liquidation in 6, 12, 18 and 24 hours for different price levels.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.LiquidationProbabilityResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/lp-bounds:
+    get:
+      summary: Insight - Liquidity provider bounds
+      description: It selects the top 'limit' miners from the the meta-leaderboard to calculate price intervals and probability to stay in each interval for the next 24 hours, expected time to stay in each interval and impermanent loss.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.LPBoundsResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/lp-probabilities:
+    get:
+      summary: Insight - Liquidity provider probabilities
+      description: Calculate the probability of asset price to be above 11 prices and bellow 11 prices.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.LPProbabilitiesResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/option-pricing:
+    get:
+      summary: Insight - Option pricing
+      description: It selects the top 'limit' miners from the the meta-leaderboard to calculate the call and put prices for different strike prices.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.OptionPricingResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/polymarket/range:
+    get:
+      summary: Insight - Polymarket price range
+      description: It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome for each range.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.PriceRangeMarket'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/polymarket/up-down/daily:
+    get:
+      summary: Insight - Polymarket up/down daily
+      description: It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome.
+      parameters:
+        - name: asset
+          in: query
+          description: 'Asset: ETH or BTC'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.PolymarketUpDownResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/polymarket/up-down/hourly:
+    get:
+      summary: Insight - Polymarket up/down hourly
+      description: It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.PolymarketUpDownResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /insights/volatility:
+    get:
+      summary: Insight - Volatility
+      description: It selects the top 'limit' miners from the the meta-leaderboard to calculate the volatility.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.VolatilityResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /prediction-percentiles:
+    get:
+      summary: Prediction Percentiles - meta model from top 10 miners
+      description: Get price distribution percentiles over the forecast horizon.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.PredictionPercentiles'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/leaderboard/historical:
+    get:
+      summary: Leaderboard -  Leaderboard History V2
+      description: Gets the leaderboard history.
+      parameters:
+        - name: start_time
+          in: query
+          description: an URL encoded ISO 8601 date/time to start from (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: end_time
+          in: query
+          description: an URL encoded ISO 8601 date/time to end at (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: prompt_name
+          in: query
+          description: Prompt name, high for 1h prompt or low for 24h prompt
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.LeaderboardItemV2'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/leaderboard/latest:
+    get:
+      summary: Leaderboard - Latest Leaderboard V2
+      description: Gets the current leaderboard.
+      parameters:
+        - name: prompt_name
+          in: query
+          description: Prompt name, high for 1h prompt or low for 24h prompt
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.LeaderboardItemV2'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/meta-leaderboard/historical:
+    get:
+      summary: Leaderboard - Meta-Leaderboard History V2
+      description: Gets the meta-leaderboard history, which aggregates miners' incentives over a period of days in the past.
+      parameters:
+        - name: start_time
+          in: query
+          description: an URL encoded ISO 8601 date/time to start from (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: prompt_name
+          in: query
+          description: Prompt name, high for 1h prompt or low for 24h prompt
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14)
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.LeaderboardItemV2'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/meta-leaderboard/latest:
+    get:
+      summary: Leaderboard - Latest Meta-Leaderboard V2
+      description: Get the current meta-leaderboard, which aggregates miners' incentives over a period of days. This provides another way to rank prediction accuracy, thereby increasing stability.
+      parameters:
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14)
+          schema:
+            type: integer
+        - name: prompt_name
+          in: query
+          description: Prompt name, high for 1h prompt or low for 24h prompt
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.LeaderboardItemV2'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/prediction/best:
+    get:
+      summary: Predictions - Best Prediction Rates
+      description: Gets the latest prediction rates of the current best miner.
+      parameters:
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          required: true
+          schema:
+            type: string
+        - name: time_increment
+          in: query
+          description: the time interval (in seconds) of the validator prompt between each rate. 300 or 60.
+          required: true
+          schema:
+            type: integer
+        - name: time_length
+          in: query
+          description: the length of time (in seconds) of the validator prompt from the start time. 86400 or 3600.
+          required: true
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.PredictionResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "404":
+          description: No prediction available
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/prediction/historical:
+    get:
+      summary: Predictions - Historical Prediction Rates
+      description: Gets the historical prediction rates.
+      parameters:
+        - name: miner
+          in: query
+          description: a list of specific miners by their ID
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          required: true
+          schema:
+            type: string
+        - name: start_time
+          in: query
+          description: an ISO 8601 date/time to start the historical rates from (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: time_increment
+          in: query
+          description: the time interval (in seconds) of the validator prompt between each rate. 300 or 60.
+          required: true
+          schema:
+            type: integer
+        - name: time_length
+          in: query
+          description: the length of time (in seconds) of the validator prompt from the start time. 86400 or 3600.
+          required: true
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.PredictionResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "404":
+          description: No prediction available
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /v2/prediction/latest:
+    get:
+      summary: Predictions - Latest Prediction Rates
+      description: Gets the latest valid prediction rates.
+      parameters:
+        - name: miner
+          in: query
+          description: a list of specific miners by their ID
+          required: true
+          style: form
+          explode: false
+          schema:
+            type: array
+            items:
+              type: integer
+        - name: asset
+          in: query
+          description: 'the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX'
+          required: true
+          schema:
+            type: string
+        - name: time_increment
+          in: query
+          description: the time interval (in seconds) of the validator prompt between each rate. 300 or 60.
+          required: true
+          schema:
+            type: integer
+        - name: time_length
+          in: query
+          description: the length of time (in seconds) of the validator prompt from the start time. 86400 or 3600.
+          required: true
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.PredictionResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "404":
+          description: No prediction available
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /validation/miner:
+    get:
+      summary: Validations - Miner Validation
+      description: Gets the validation status for a specific miner
+      parameters:
+        - name: uid
+          in: query
+          description: ID of the miner to get validation for
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.MinerValidationResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /validation/scores/historical:
+    get:
+      summary: Validations - Historical Scores
+      description: Gets the validation scores for all miners between two dates
+      parameters:
+        - name: from
+          in: query
+          description: Start date (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: to
+          in: query
+          description: End date (2025-02-03T10:19:04Z or 2025-02-03T17:19:04+07:00 or 2025-02-03)
+          required: true
+          schema:
+            type: string
+        - name: miner_uid
+          in: query
+          description: Optional miner ID to filter by
+          schema:
+            type: integer
+        - name: asset
+          in: query
+          description: 'The symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX (default BTC)'
+          schema:
+            type: string
+        - name: time_increment
+          in: query
+          description: 'the time interval (in seconds) of the validator prompt between each rate: 300 or 60 (default 300).'
+          schema:
+            type: integer
+        - name: time_length
+          in: query
+          description: 'the length of time (in seconds) of the validator prompt from the start time: 86400 or 3600 (default 86400)'
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.ValidationScore'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+  /validation/scores/latest:
+    get:
+      summary: Validations - Latest Scores
+      description: Gets the most recent validation scores for all miners
+      parameters:
+        - name: asset
+          in: query
+          description: 'The symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX (default BTC)'
+          schema:
+            type: string
+        - name: time_increment
+          in: query
+          description: 'the time interval (in seconds) of the validator prompt between each rate: 300 or 60 (default 300).'
+          schema:
+            type: integer
+        - name: time_length
+          in: query
+          description: 'the length of time (in seconds) of the validator prompt from the start time: 86400 or 3600 (default 86400)'
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/types.ValidationScore'
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
+components:
+  schemas:
+    types.APIKey:
+      type: object
+      properties:
+        allowed_assets:
+          type: string
+        allowed_routes:
+          type: string
+        id:
+          type: integer
+        label:
+          type: string
+        part:
+          type: string
+        rate_limit:
+          type: number
+        role:
+          type: string
+        user_id:
+          type: string
+    types.APIKeyCreated:
+      type: object
+      properties:
+        allowed_assets:
+          type: string
+        allowed_routes:
+          type: string
+        id:
+          type: integer
+        key_plain_text:
+          type: string
+        label:
+          type: string
+        rate_limit:
+          type: number
+        role:
+          type: string
+        user_id:
+          type: string
+    types.CreateAPIKeyDTO:
+      type: object
+      properties:
+        allowed_assets:
+          type: string
+        allowed_routes:
+          type: string
+        label:
+          type: string
+        rate_limit:
+          type: number
+        role:
+          type: string
+    types.DistributedReward:
+      type: object
+      properties:
+        amount:
+          type: number
+        asset:
+          type: string
+    types.Forecast:
+      type: object
+      properties:
+        average_volatility:
+          type: number
+        volatility:
+          type: array
+          items:
+            type: number
+    types.ForecastDataTyped:
+      type: object
+      properties:
+        percentiles:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.PercentileTyped'
+    types.HourlyProbability:
+      type: object
+      properties:
+        "12":
+          type: number
+        "18":
+          type: number
+        "24":
+          type: number
+        "6":
+          type: number
+    types.Interval:
+      type: object
+      properties:
+        full_width:
+          type: string
+        lower_bound:
+          type: number
+        upper_bound:
+          type: number
+    types.IntervalData:
+      type: object
+      properties:
+        expected_impermanent_loss:
+          type: number
+        expected_time_in_interval:
+          type: number
+        interval:
+          $ref: '#/components/schemas/types.Interval'
+        probability_to_stay_in_interval:
+          $ref: '#/components/schemas/types.StayInIntervalProbability'
+    types.LPBoundsResponse:
+      type: object
+      properties:
+        current_price:
+          type: number
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.IntervalData'
+    types.LPProbabilitiesResponse:
+      type: object
+      properties:
+        current_price:
+          type: number
+        data:
+          $ref: '#/components/schemas/types.PriceProbabilityData'
+    types.LatestMinerRegistrationResponse:
+      type: object
+      properties:
+        last_registered_at:
+          type: string
+          example: "2025-06-24T12:12:00Z"
+        uid:
+          type: integer
+          example: 123
+    types.LeaderboardItem:
+      type: object
+      properties:
+        coldkey:
+          type: string
+        emission:
+          type: number
+        incentive:
+          type: number
+        ip_address:
+          type: string
+        neuron_uid:
+          type: integer
+        pruning_score:
+          type: number
+        rank:
+          type: number
+        stake:
+          type: number
+        updated_at:
+          type: string
+    types.LeaderboardItemV2:
+      type: object
+      properties:
+        coldkey:
+          type: string
+        ip_address:
+          type: string
+        neuron_uid:
+          type: integer
+        rewards:
+          type: number
+        updated_at:
+          type: string
+    types.LiquidationProbability:
+      type: object
+      properties:
+        long_liquidation_probability:
+          $ref: '#/components/schemas/types.HourlyProbability'
+        price_change:
+          type: string
+        short_liquidation_probability:
+          $ref: '#/components/schemas/types.HourlyProbability'
+    types.LiquidationProbabilityResponse:
+      type: object
+      properties:
+        current_price:
+          type: number
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.LiquidationProbability'
+    types.MinerRegistrationsResponse:
+      type: object
+      properties:
+        registrations:
+          type: array
+          items:
+            type: string
+          example: ["2025-06-24T12:12:00Z", "2025-04-03T09:43:00Z"]
+        uid:
+          type: integer
+          example: 123
+    types.MinerValidationResponse:
+      type: object
+      properties:
+        reason:
+          type: string
+        response_time:
+          type: string
+        validated:
+          type: boolean
+    types.ModifyAPIKeyDTO:
+      type: object
+      properties:
+        allowed_assets:
+          type: string
+        allowed_routes:
+          type: string
+        id:
+          type: integer
+        label:
+          type: string
+        rate_limit:
+          type: number
+        role:
+          type: string
+    types.OptionPricingResponse:
+      type: object
+      properties:
+        call_options:
+          type: object
+          additionalProperties:
+            type: number
+        current_price:
+          type: number
+        expiry_time:
+          type: string
+        put_options:
+          type: object
+          additionalProperties:
+            type: number
+    types.PercentileTyped:
+      type: object
+      properties:
+        "0.005":
+          type: number
+        "0.05":
+          type: number
+        "0.2":
+          type: number
+        "0.35":
+          type: number
+        "0.5":
+          type: number
+        "0.65":
+          type: number
+        "0.8":
+          type: number
+        "0.95":
+          type: number
+        "0.995":
+          type: number
+    types.PolymarketUpDownResponse:
+      type: object
+      properties:
+        best_ask_price:
+          type: number
+        best_ask_size:
+          type: number
+        best_bid_price:
+          type: number
+        best_bid_size:
+          type: number
+        current_outcome:
+          type: string
+        current_price:
+          type: number
+        current_time:
+          type: string
+        event_creation_time:
+          type: string
+        event_end_time:
+          type: string
+        event_start_time:
+          type: string
+        polymarket_last_trade_outcome:
+          type: string
+        polymarket_last_trade_price:
+          type: number
+        polymarket_last_trade_time:
+          type: string
+        polymarket_outcome:
+          type: string
+        polymarket_probability_up:
+          type: number
+        slug:
+          type: string
+        start_price:
+          type: number
+        synth_outcome:
+          type: string
+        synth_probability_up:
+          type: number
+    types.PredictionItem:
+      type: object
+      properties:
+        price:
+          type: number
+        time:
+          type: string
+    types.PredictionPercentiles:
+      type: object
+      properties:
+        current_price:
+          type: number
+        forecast_future:
+          $ref: '#/components/schemas/types.ForecastDataTyped'
+    types.PredictionResponse:
+      type: object
+      properties:
+        miner_uid:
+          type: integer
+        predictions:
+          type: array
+          items:
+            type: array
+            items:
+              type: number
+        start_time:
+          type: integer
+    types.PredictionResponseV1:
+      type: object
+      properties:
+        asset:
+          type: string
+        miner_uid:
+          type: integer
+        num_simulations:
+          type: integer
+        prediction:
+          type: array
+          items:
+            type: array
+            items:
+              $ref: '#/components/schemas/types.PredictionItem'
+        start_time:
+          type: string
+        time_increment:
+          type: integer
+        time_length:
+          type: integer
+    types.PriceProbabilityData:
+      type: object
+      properties:
+        24h:
+          $ref: '#/components/schemas/types.ProbabilityDirection'
+    types.PriceRangeMarket:
+      type: object
+      properties:
+        best_ask_price:
+          type: number
+        best_ask_size:
+          type: number
+        best_bid_price:
+          type: number
+        best_bid_size:
+          type: number
+        cmp_type:
+          type: string
+        current_outcome:
+          type: integer
+        current_price:
+          type: number
+        current_time:
+          type: string
+        event_creation_time:
+          type: string
+        event_end_time:
+          type: string
+        event_start_time:
+          type: string
+        polymarket_last_trade_outcome:
+          type: integer
+        polymarket_last_trade_price:
+          type: number
+        polymarket_last_trade_time:
+          type: string
+        polymarket_outcome:
+          type: integer
+        polymarket_probability:
+          type: number
+        ref_prices:
+          type: array
+          items:
+            type: number
+        slug:
+          type: string
+        synth_outcome:
+          type: integer
+        synth_probability:
+          type: number
+        title:
+          type: string
+    types.PriceReturn:
+      type: object
+      properties:
+        price:
+          type: number
+        returns:
+          type: number
+          description: pointer to handle null values
+    types.ProbabilityDirection:
+      type: object
+      properties:
+        probability_above:
+          type: object
+          additionalProperties:
+            type: number
+        probability_below:
+          type: object
+          additionalProperties:
+            type: number
+    types.Realized:
+      type: object
+      properties:
+        average_volatility:
+          type: number
+        prices:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.PriceReturn'
+        volatility:
+          type: array
+          items:
+            type: number
+          description: pointer slice to handle null values
+    types.RewardsHistorical:
+      type: object
+      properties:
+        date:
+          type: string
+        rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+    types.RewardsPerAxons:
+      type: object
+      properties:
+        axon_ip:
+          type: string
+        cumulative_holding_rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+        cumulative_rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+        current_rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+        current_uids:
+          type: array
+          items:
+            type: integer
+        date:
+          type: string
+        miner_count:
+          type: integer
+        total_rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+    types.RewardsScore:
+      type: object
+      properties:
+        miner_uid:
+          type: integer
+        prompt_name:
+          type: string
+        reward_weight:
+          type: number
+        smoothed_score:
+          type: number
+        updated_at:
+          type: string
+    types.RewardsSum:
+      type: object
+      properties:
+        from:
+          type: string
+        rewards:
+          type: array
+          items:
+            $ref: '#/components/schemas/types.DistributedReward'
+        to:
+          type: string
+    types.StayInIntervalProbability:
+      type: object
+      properties:
+        "24":
+          type: number
+    types.ValidationScore:
+      type: object
+      properties:
+        asset:
+          type: string
+        crps:
+          type: number
+        miner_uid:
+          type: integer
+        prompt_score:
+          type: number
+        scored_time:
+          type: string
+        time_length:
+          type: integer
+    types.VolatilityResponse:
+      type: object
+      properties:
+        current_price:
+          type: number
+        forecast_future:
+          $ref: '#/components/schemas/types.Forecast'
+        forecast_past:
+          $ref: '#/components/schemas/types.Forecast'
+        realized:
+          $ref: '#/components/schemas/types.Realized'
