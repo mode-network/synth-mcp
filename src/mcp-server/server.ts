@@ -23,7 +23,6 @@ import { tool$getInsightsPolymarketUpDownDaily } from "./tools/getInsightsPolyma
 import { tool$getInsightsPolymarketUpDownHourly } from "./tools/getInsightsPolymarketUpDownHourly.js";
 import { tool$getInsightsVolatility } from "./tools/getInsightsVolatility.js";
 import { tool$getPredictionPercentiles } from "./tools/getPredictionPercentiles.js";
-import { tool$getV2LeaderboardLatest } from "./tools/getV2LeaderboardLatest.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -88,7 +87,6 @@ export function createMCPServer(deps: {
   tool(tool$getInsightsPolymarketUpDownHourly);
   tool(tool$getInsightsVolatility);
   tool(tool$getPredictionPercentiles);
-  tool(tool$getV2LeaderboardLatest);
 
   if (deps.dynamic) {
     registerDynamicTools(deps.logger, server, getClient, toolMap, scopes);
