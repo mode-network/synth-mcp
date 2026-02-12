@@ -1,13 +1,13 @@
 workflowVersion: 1.0.0
 speakeasyVersion: latest
 sources:
-    SN50 | Synth API:
+    Synth API:
         inputs:
-            - location: https://api.synthdata.co/docs/swagger.json
+            - location: .speakeasy/in.openapi.yaml
         output: .speakeasy/out.openapi.yaml
         registry:
-            location: registry.speakeasyapi.dev/synth-data/synthdata/sn-50-|-synth-api
+            location: registry.speakeasyapi.dev/synth-data/synthdata/synth-mcp
 targets:
     synth:
         target: mcp-typescript
-        source: SN50 | Synth API
+        source: Synth API

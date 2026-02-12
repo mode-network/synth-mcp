@@ -1,7 +1,19 @@
 {
-  "name": "synth-mcp",
-  "version": "0.0.1",
-  "author": "Speakeasy",
+  "name": "@mode-network/synth-mcp",
+  "version": "0.1.0",
+  "author": "Synth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mode-network/synth-mcp.git"
+  },
+  "description": "An MCP server for Synth predictive intelligence.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "synth",
+    "predictive-intelligence"
+  ],
+  "mcpName": "io.github.mode-network/synth-mcp",
   "type": "module",
   "sideEffects": false,
   "bin": {
@@ -9,6 +21,7 @@
     "mcp": "bin/mcp-server.js"
   },
   "scripts": {
+    "generate": "speakeasy run --skip-versioning",
     "build": "bun i && bun src/mcp-server/build.mts && tsc",
     "mcpb:build": "bun i && bun src/mcp-server/build.mts --pack && tsc",
     "check": "npm run lint",

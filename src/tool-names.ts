@@ -2,78 +2,38 @@
 export const toolNames: Array<{ name: string; description: string }>= [
   {
     "name": "get-insights-liquidation",
-    "description": "Insight - Liquidation probability\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the probability of liquidation in 6, 12, 18 and 24 hours for different price levels."
+    "description": "Insight - Liquidation probability\n\nGet long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure."
   },
   {
     "name": "get-insights-lp-bounds",
-    "description": "Insight - Liquidity provider bounds\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate price intervals and probability to stay in each interval for the next 24 hours, expected time to stay in each interval and impermanent loss."
+    "description": "Insight - Liquidity provider bounds\n\nGet price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies."
   },
   {
     "name": "get-insights-lp-probabilities",
-    "description": "Insight - Liquidity provider probabilities\n\nCalculate the probability of asset price to be above 11 prices and bellow 11 prices."
+    "description": "Insight - Liquidity provider probabilities\n\nGet long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure."
   },
   {
     "name": "get-insights-option-pricing",
-    "description": "Insight - Option pricing\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the call and put prices for different strike prices."
+    "description": "Insight - Option pricing\n\nGet SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options."
   },
   {
     "name": "get-insights-polymarket-range",
-    "description": "Insight - Polymarket price range\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome for each range."
+    "description": "Insight - Polymarket price range\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets."
   },
   {
     "name": "get-insights-polymarket-up-down-daily",
-    "description": "Insight - Polymarket up/down daily\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome."
+    "description": "Insight - Polymarket up/down daily\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets."
   },
   {
     "name": "get-insights-polymarket-up-down-hourly",
-    "description": "Insight - Polymarket up/down hourly\n\nIt selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome."
+    "description": "Insight - Polymarket up/down hourly\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes."
   },
   {
     "name": "get-insights-volatility",
-    "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the the meta-leaderboard to calculate the volatility."
+    "description": "Insight - Volatility\n\nGet SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility."
   },
   {
     "name": "get-prediction-percentiles",
-    "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles over the forecast horizon."
-  },
-  {
-    "name": "get-v2-leaderboard-historical",
-    "description": "Leaderboard -  Leaderboard History V2\n\nGets the leaderboard history."
-  },
-  {
-    "name": "get-v2-leaderboard-latest",
-    "description": "Leaderboard - Latest Leaderboard V2\n\nGets the current leaderboard."
-  },
-  {
-    "name": "get-v2-meta-leaderboard-historical",
-    "description": "Leaderboard - Meta-Leaderboard History V2\n\nGets the meta-leaderboard history, which aggregates miners' incentives over a period of days in the past."
-  },
-  {
-    "name": "get-v2-meta-leaderboard-latest",
-    "description": "Leaderboard - Latest Meta-Leaderboard V2\n\nGet the current meta-leaderboard, which aggregates miners' incentives over a period of days. This provides another way to rank prediction accuracy, thereby increasing stability."
-  },
-  {
-    "name": "get-v2-prediction-best",
-    "description": "Predictions - Best Prediction Rates\n\nGets the latest prediction rates of the current best miner."
-  },
-  {
-    "name": "get-v2-prediction-historical",
-    "description": "Predictions - Historical Prediction Rates\n\nGets the historical prediction rates."
-  },
-  {
-    "name": "get-v2-prediction-latest",
-    "description": "Predictions - Latest Prediction Rates\n\nGets the latest valid prediction rates."
-  },
-  {
-    "name": "get-validation-miner",
-    "description": "Validations - Miner Validation\n\nGets the validation status for a specific miner"
-  },
-  {
-    "name": "get-validation-scores-historical",
-    "description": "Validations - Historical Scores\n\nGets the validation scores for all miners between two dates"
-  },
-  {
-    "name": "get-validation-scores-latest",
-    "description": "Validations - Latest Scores\n\nGets the most recent validation scores for all miners"
+    "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies."
   }
 ];

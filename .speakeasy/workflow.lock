@@ -1,19 +1,29 @@
 speakeasyVersion: 1.713.1
-sources: {}
+sources:
+    Synth API:
+        sourceNamespace: synth-mcp
+        sourceRevisionDigest: sha256:87ed1bbfe916e56d8f8be801198e5c087eaa42e6d9537a09d2ac787820c92236
+        sourceBlobDigest: sha256:318b77f6660e4082b40e97ef48ee85c8c19f5f730813ceddb9d738945500b810
+        tags:
+            - latest
+            - "1.0"
 targets:
     synth:
-        source: SN50 | Synth API
+        source: Synth API
+        sourceNamespace: synth-mcp
+        sourceRevisionDigest: sha256:87ed1bbfe916e56d8f8be801198e5c087eaa42e6d9537a09d2ac787820c92236
+        sourceBlobDigest: sha256:318b77f6660e4082b40e97ef48ee85c8c19f5f730813ceddb9d738945500b810
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest
     sources:
-        SN50 | Synth API:
+        Synth API:
             inputs:
-                - location: https://api.synthdata.co/docs/swagger.json
+                - location: .speakeasy/in.openapi.yaml
             output: .speakeasy/out.openapi.yaml
             registry:
-                location: registry.speakeasyapi.dev/synth-data/synthdata/sn-50-|-synth-api
+                location: registry.speakeasyapi.dev/synth-data/synthdata/synth-mcp
     targets:
         synth:
             target: mcp-typescript
-            source: SN50 | Synth API
+            source: Synth API

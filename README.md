@@ -13,7 +13,7 @@ Model Context Protocol (MCP) Server for the *synth-mcp* API.
 <!-- Start Summary [summary] -->
 ## Summary
 
-SN50 | Synth API: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.
+Synth: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.
 <!-- End Summary [summary] -->
 
 <!-- Start Table of Contents [toc] -->
