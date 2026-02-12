@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Liquidity provider probabilities
  *
  * @remarks
- * Calculate the probability of asset price to be above 11 prices and bellow 11 prices.
+ * Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure.
  */
 export function getInsightsLpProbabilities(
   client$: SynthCore,

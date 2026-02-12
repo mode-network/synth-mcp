@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Liquidity provider bounds
  *
  * @remarks
- * It selects the top 'limit' miners from the the meta-leaderboard to calculate price intervals and probability to stay in each interval for the next 24 hours, expected time to stay in each interval and impermanent loss.
+ * Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.
  */
 export function getInsightsLpBounds(
   client$: SynthCore,

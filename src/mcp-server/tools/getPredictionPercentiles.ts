@@ -15,7 +15,7 @@ export const tool$getPredictionPercentiles: ToolDefinition<typeof args> = {
   name: "get-prediction-percentiles",
   description: `Prediction Percentiles - meta model from top 10 miners
 
-Get price distribution percentiles over the forecast horizon.`,
+Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

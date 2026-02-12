@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Option pricing
  *
  * @remarks
- * It selects the top 'limit' miners from the the meta-leaderboard to calculate the call and put prices for different strike prices.
+ * Get SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options.
  */
 export function getInsightsOptionPricing(
   client$: SynthCore,

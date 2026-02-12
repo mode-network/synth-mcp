@@ -17,7 +17,7 @@ export const tool$getInsightsPolymarketUpDownHourly: ToolDefinition<
   name: "get-insights-polymarket-up-down-hourly",
   description: `Insight - Polymarket up/down hourly
 
-It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome.`,
+Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

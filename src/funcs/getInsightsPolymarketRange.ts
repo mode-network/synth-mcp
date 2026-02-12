@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Polymarket price range
  *
  * @remarks
- * It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome for each range.
+ * Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets.
  */
 export function getInsightsPolymarketRange(
   client$: SynthCore,

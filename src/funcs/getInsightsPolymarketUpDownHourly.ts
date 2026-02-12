@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Polymarket up/down hourly
  *
  * @remarks
- * It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome.
+ * Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes.
  */
 export function getInsightsPolymarketUpDownHourly(
   client$: SynthCore,

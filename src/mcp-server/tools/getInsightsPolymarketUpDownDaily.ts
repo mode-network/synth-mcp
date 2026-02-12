@@ -17,7 +17,7 @@ export const tool$getInsightsPolymarketUpDownDaily: ToolDefinition<
   name: "get-insights-polymarket-up-down-daily",
   description: `Insight - Polymarket up/down daily
 
-It selects the top 'limit' miners from the the meta-leaderboard to compare polymarket and synth probability and outcome.`,
+Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets.`,
   annotations: {
     "title": "",
     "destructiveHint": false,
