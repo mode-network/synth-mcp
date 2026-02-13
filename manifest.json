@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.3",
   "name": "synth-mcp",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "long_description": "Synth: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.",
   "author": {
@@ -25,6 +25,9 @@
     }
   },
   "display_name": "Synth",
+  "screenshots": [
+    "icon.png"
+  ],
   "prompts": [],
   "keywords": [
     "synth",
