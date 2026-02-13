@@ -1,4 +1,4 @@
-speakeasyVersion: 1.713.1
+speakeasyVersion: 1.715.0
 sources:
     Synth API:
         sourceNamespace: synth-mcp
