@@ -21,6 +21,9 @@
     }
   },
   "display_name": "Synth Mcp",
+  "screenshots": [
+    "icon.png"
+  ],
   "prompts": [],
   "keywords": [
     "synth",
@@ -37,6 +40,7 @@
       "required": true
     }
   },
+  "icon": "icon.png",
   "tools": [
     {
       "name": "get-insights-liquidation",
