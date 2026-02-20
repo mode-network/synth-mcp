@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Liquidity provider bounds
  *
  * @remarks
- * Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.
+ * Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.
  */
 export function getInsightsLpBounds(
   client$: SynthCore,
@@ -88,6 +88,7 @@ async function $do(
     "asset": payload$?.asset,
     "days": payload$?.days,
     "limit": payload$?.limit,
+    "prompt_name": payload$?.prompt_name,
   });
 
   const headers$ = new Headers(compactMap({

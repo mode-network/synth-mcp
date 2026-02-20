@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Volatility
  *
  * @remarks
- * Get SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility.
+ * It selects the top 'limit' miners from the meta-leaderboard to calculate the volatility.
  */
 export function getInsightsVolatility(
   client$: SynthCore,
@@ -88,6 +88,7 @@ async function $do(
     "asset": payload$?.asset,
     "days": payload$?.days,
     "limit": payload$?.limit,
+    "prompt_name": payload$?.prompt_name,
   });
 
   const headers$ = new Headers(compactMap({

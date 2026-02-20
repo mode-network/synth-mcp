@@ -6,13 +6,13 @@
 import * as z from "zod";
 
 export type TypesPercentileTyped = {
-  zeroDot005?: number | undefined;
-  zeroDot05?: number | undefined;
   zeroDot2?: number | undefined;
-  zeroDot35?: number | undefined;
   zeroDot5?: number | undefined;
-  zeroDot65?: number | undefined;
+  zeroDot05?: number | undefined;
+  zeroDot005?: number | undefined;
   zeroDot8?: number | undefined;
+  zeroDot35?: number | undefined;
+  zeroDot65?: number | undefined;
   zeroDot95?: number | undefined;
   zeroDot995?: number | undefined;
 };

@@ -2,38 +2,38 @@
 export const toolNames: Array<{ name: string; description: string }>= [
   {
     "name": "get-insights-liquidation",
-    "description": "Insight - Liquidation probability\n\nGet long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure."
+    "description": "Insight - Liquidation probability\n\nGet long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-lp-bounds",
-    "description": "Insight - Liquidity provider bounds\n\nGet price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies."
+    "description": "Insight - Liquidity provider bounds\n\nGet price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-lp-probabilities",
-    "description": "Insight - Liquidity provider probabilities\n\nGet long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure."
+    "description": "Insight - Liquidity provider probabilities\n\nGet the probability of an asset's price being above or below specific price targets over the next 24 hours. Returns probabilities for 11 upside and 11 downside price levels relative to the current price. Useful for options strike selection, Polymarket up/down contracts, and directional risk assessment. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-option-pricing",
-    "description": "Insight - Option pricing\n\nGet SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options."
+    "description": "Insight - Option pricing\n\nGet SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options. Supported assets: BTC, ETH, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-polymarket-range",
-    "description": "Insight - Polymarket price range\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets."
+    "description": "Insight - Polymarket price range\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-polymarket-up-down-daily",
-    "description": "Insight - Polymarket up/down daily\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets."
+    "description": "Insight - Polymarket up/down daily\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-polymarket-up-down-hourly",
-    "description": "Insight - Polymarket up/down hourly\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes."
+    "description": "Insight - Polymarket up/down hourly\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   },
   {
     "name": "get-insights-volatility",
-    "description": "Insight - Volatility\n\nGet SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility."
+    "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the meta-leaderboard to calculate the volatility."
   },
   {
     "name": "get-prediction-percentiles",
-    "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies."
+    "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
   }
 ];
