@@ -88,8 +88,8 @@ async function $do(
   const query$ = encodeFormQuery({
     "asset": payload$?.asset,
     "days": payload$?.days,
+    "horizon": payload$?.horizon,
     "limit": payload$?.limit,
-    "prompt_name": payload$?.prompt_name,
   });
 
   const headers$ = new Headers(compactMap({
