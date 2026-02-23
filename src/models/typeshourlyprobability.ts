@@ -6,10 +6,10 @@
 import * as z from "zod";
 
 export type TypesHourlyProbability = {
+  six?: number | undefined;
   twelve?: number | undefined;
   eighteen?: number | undefined;
   twentyFour?: number | undefined;
-  six?: number | undefined;
 };
 
 export const TypesHourlyProbability$zodSchema: z.ZodType<

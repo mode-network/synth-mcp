@@ -17,7 +17,7 @@ export const tool$getInsightsPolymarketUpDownHourly: ToolDefinition<
   name: "get-insights-polymarket-up-down-hourly",
   description: `Insight - Polymarket up/down hourly
 
-Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes.`,
+Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

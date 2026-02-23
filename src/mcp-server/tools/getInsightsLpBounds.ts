@@ -15,7 +15,7 @@ export const tool$getInsightsLpBounds: ToolDefinition<typeof args> = {
   name: "get-insights-lp-bounds",
   description: `Insight - Liquidity provider bounds
 
-Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.`,
+Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

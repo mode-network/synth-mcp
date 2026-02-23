@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Liquidation probability
  *
  * @remarks
- * Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure.
+ * Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.
  */
 export function getInsightsLiquidation(
   client$: SynthCore,
@@ -88,6 +88,7 @@ async function $do(
   const query$ = encodeFormQuery({
     "asset": payload$?.asset,
     "days": payload$?.days,
+    "horizon": payload$?.horizon,
     "limit": payload$?.limit,
   });
 

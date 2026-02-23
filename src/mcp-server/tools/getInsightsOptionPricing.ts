@@ -15,7 +15,7 @@ export const tool$getInsightsOptionPricing: ToolDefinition<typeof args> = {
   name: "get-insights-option-pricing",
   description: `Insight - Option pricing
 
-Get SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options.`,
+Get SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options. Supported assets: BTC, ETH, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

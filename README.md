@@ -21,6 +21,7 @@ Synth: Synth API offers programmatic access to probabilistic price forecasts for
 <!-- $toc-max-depth=2 -->
 * [synth-mcp](#synth-mcp)
   * [Installation](#installation)
+  * [Progressive Discovery](#progressive-discovery)
   * [Development](#development)
   * [Publishing to Anthropic MCP Registry](#publishing-to-anthropic-mcp-registry)
   * [Contributions](#contributions)
@@ -153,6 +154,34 @@ npx synth-mcp --help
 
 </details>
 <!-- End Installation [installation] -->
+
+<!-- Start Progressive Discovery [dynamic-mode] -->
+## Progressive Discovery
+
+MCP servers with many tools can bloat LLM context windows, leading to increased token usage and tool confusion. Dynamic mode solves this by exposing only a small set of meta-tools that let agents progressively discover and invoke tools on demand.
+
+To enable dynamic mode, pass the `--mode dynamic` flag when starting your server:
+
+```jsonc
+{
+  "mcpServers": {
+    "Synth": {
+      "command": "npx",
+      "args": ["synth-mcp", "start", "--mode", "dynamic"],
+      // ... other server arguments
+    }
+  }
+}
+```
+
+In dynamic mode, the server registers only the following meta-tools instead of every individual tool:
+
+- **`list_tools`**: Lists all available tools with their names and descriptions.
+- **`describe_tool`**: Returns the input schema for one or more tools by name.
+- **`execute_tool`**: Executes a tool by name with the provided input parameters.
+
+This approach significantly reduces the number of tokens sent to the LLM on each request, which is especially useful for servers with a large number of tools.
+<!-- End Progressive Discovery [dynamic-mode] -->
 
 <!-- Placeholder for Future Speakeasy SDK Sections -->
 
