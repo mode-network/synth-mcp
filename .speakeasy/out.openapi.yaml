@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Synth API
+  title: Synth
   version: "1.0"
   description: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.
   contact:
@@ -209,7 +209,7 @@ paths:
   /insights/polymarket/range:
     get:
       summary: Insight - Polymarket price range
-      description: 'Get SynthData''s estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.'
+      description: 'Get SynthData''s estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, SOL, NVDA, GOOGL, TSLA, AAPL.'
       parameters:
         - name: asset
           in: query
@@ -311,7 +311,7 @@ paths:
   /insights/polymarket/up-down/hourly:
     get:
       summary: Insight - Polymarket up/down hourly
-      description: 'Get SynthData''s estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.'
+      description: 'Get SynthData''s estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL.'
       parameters:
         - name: asset
           in: query

@@ -319,7 +319,7 @@ info:
   contact:
     url: https://synthdata.co
   description: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.
-  title: Synth API
+  title: Synth
   version: "1.0"
   x-logo:
     url: /docs/assets/images/logo.svg
@@ -510,7 +510,7 @@ paths:
       summary: Insight - Option pricing
   /insights/polymarket/range:
     get:
-      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, SOL, NVDA, GOOGL, TSLA, AAPL."
       parameters:
         - description: "Symbol of the asset: BTC, ETH, SOL, NVDA, GOOGL, TSLA, AAPL"
           example: BTC
@@ -604,7 +604,7 @@ paths:
       summary: Insight - Polymarket up/down daily
   /insights/polymarket/up-down/hourly:
     get:
-      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
       parameters:
         - description: "Symbol of the asset: BTC, ETH, SOL"
           example: BTC

@@ -1,16 +1,16 @@
 lockVersion: 2.0.0
 id: aefbfd95-3898-417a-81f2-07292e60b44f
 management:
-  docChecksum: 8bc78a581bd7af8cd73efcc8cb9a474e
+  docChecksum: b5c7892e51cfdeae23052af1973f0139
   docVersion: "1.0"
   speakeasyVersion: 1.724.1
   generationVersion: 2.836.5
   releaseVersion: 0.0.11
   configChecksum: b9329f00b555d2e60ae177326baae7f0
 persistentEdits:
-  generation_id: a711c250-f660-46c4-90c9-e9b4462ab9a8
-  pristine_commit_hash: 9011b1fc1071da5e32e88f1385cf6a97e637e496
-  pristine_tree_hash: 294520194e21b4c57aabb2429d60dea9605a944c
+  generation_id: 876a81d4-d15f-437d-87d7-a6dc16324c38
+  pristine_commit_hash: de9f9d084a3a0b8eddd8e53042e4ce255d42bc58
+  pristine_tree_hash: c61920a828bdfdbc339bcde16c1e91d600dec45f
 features:
   mcp-typescript:
     additionalDependencies: 0.1.0
@@ -40,8 +40,8 @@ trackedFiles:
     pristine_git_object: 4f9e60a9462fc4def738d60c3aaadf8232ef185f
   manifest.json:
     id: ca642a226869
-    last_write_checksum: sha1:e6535a5af743d9ff7640485e3ffd4f5725aee53c
-    pristine_git_object: 3edb72a10a487fa672d87b5e8fba87441a56ef7f
+    last_write_checksum: sha1:722c3a7e6667c5312b314b93f045983097c3df4a
+    pristine_git_object: 778570d91b4c9c7b50cfdc2a2a433e726bd06569
   package.json:
     id: 7030d0b2f71b
     last_write_checksum: sha1:8a44b857464efbd25ebcdd527c67ceeced1f31eb
@@ -68,16 +68,16 @@ trackedFiles:
     pristine_git_object: 10f4d569c8de45d4b670caf8536772e24454ec8a
   src/funcs/getInsightsPolymarketRange.ts:
     id: ca0d759efa03
-    last_write_checksum: sha1:1f0dad8d4f5a771adadc38458b9cd1be8a652875
-    pristine_git_object: 55315a744af206eebdfc8a2294bb698365d6f37e
+    last_write_checksum: sha1:5e45e135a6fe42f71267ec98288804bf2489e4c7
+    pristine_git_object: c0fdfa17f9f8382bd199dedf8be7c1b8f047f803
   src/funcs/getInsightsPolymarketUpDownDaily.ts:
     id: ef191c6656c9
     last_write_checksum: sha1:0169d594b4c52e7e8097bad2af7aeacf6cea0437
     pristine_git_object: e33f313d1b8b41fccb72441c946d53565e56c4de
   src/funcs/getInsightsPolymarketUpDownHourly.ts:
     id: e9e94a5dc60c
-    last_write_checksum: sha1:5b9b19acea5467cafc3de1405185258afdd07fc1
-    pristine_git_object: 41e03f72860dff0e59a8606cfdda46e317fd3808
+    last_write_checksum: sha1:30bcd469ffac1a75118776f819436a4557491449
+    pristine_git_object: 91338bf45ae3e9e1f7579499da44544cd5d19711
   src/funcs/getInsightsVolatility.ts:
     id: a7a7c9b3a923
     last_write_checksum: sha1:50b1aaa3c7d3f3ce35ccddbf8c562c18e24b891f
@@ -236,16 +236,16 @@ trackedFiles:
     pristine_git_object: 724dcc72de52fc861000b7f675cd941ffb17e899
   src/mcp-server/tools/getInsightsPolymarketRange.ts:
     id: 1eb8cd660eb1
-    last_write_checksum: sha1:4100ad9556ed23057e2f35b385bfb7df766a0e08
-    pristine_git_object: c67854e6ebaf4e53548800d102a69371d9317404
+    last_write_checksum: sha1:3ee4db5e133b5c222a746e33710752487002c8e2
+    pristine_git_object: 51ae07ffa22ec03041d628c8d9454e0ce113fad5
   src/mcp-server/tools/getInsightsPolymarketUpDownDaily.ts:
     id: 68d48f874d49
     last_write_checksum: sha1:229697151ccc8ef91ffb4c39dbacf3fea5d4676b
     pristine_git_object: 1a679a3c072dccdb88e10e598fe18919a8e0e244
   src/mcp-server/tools/getInsightsPolymarketUpDownHourly.ts:
     id: f9c78bf6a832
-    last_write_checksum: sha1:f189b6f7c602b909e2d014aac0f031ed2a829f04
-    pristine_git_object: 1bfc565d8be6cea9203a45b8ec1f94e4a697aa96
+    last_write_checksum: sha1:28a1d49ca558294e50d77d18aa61fbbd88b3b781
+    pristine_git_object: 6f908e3cadf4db6b4065a074af8059f680b174a1
   src/mcp-server/tools/getInsightsVolatility.ts:
     id: 236e430e069f
     last_write_checksum: sha1:1fe5c7aa0ddcda5ae842eb1aaa53ff863d95e842
@@ -384,8 +384,8 @@ trackedFiles:
     pristine_git_object: 73a5f25764717694174216fd4734c72ab2a3fff1
   src/tool-names.ts:
     id: a9977280f9eb
-    last_write_checksum: sha1:4fdc58fd7e58813ee279673a530c4c9d205765a8
-    pristine_git_object: dfd2762254ad985e91774fadf0f4f9c9d8beaab1
+    last_write_checksum: sha1:a3be5834e218a39f8f36d6610309f8a18785317e
+    pristine_git_object: 013e52331641972e6d5ea47f22d617c3d93f0eac
   src/types/async.ts:
     id: fac8da972f86
     last_write_checksum: sha1:e2a7c53b428567587741f38e6da489f596de6227
