@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Polymarket price range
  *
  * @remarks
- * Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets.
+ * Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.
  */
 export function getInsightsPolymarketRange(
   client$: SynthCore,
@@ -88,6 +88,7 @@ async function $do(
   const query$ = encodeFormQuery({
     "asset": payload$?.asset,
     "days": payload$?.days,
+    "horizon": payload$?.horizon,
     "limit": payload$?.limit,
   });
 

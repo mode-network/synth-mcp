@@ -1,937 +1,743 @@
-openapi: 3.0.0
+definitions:
+  types.Forecast:
+    properties:
+      average_volatility:
+        type: number
+      volatility:
+        items:
+          type: number
+        type: array
+    type: object
+  types.ForecastDataTyped:
+    properties:
+      percentiles:
+        items:
+          $ref: "#/definitions/types.PercentileTyped"
+        type: array
+    type: object
+  types.HourlyProbability:
+    properties:
+      "6":
+        type: number
+      "12":
+        type: number
+      "18":
+        type: number
+      "24":
+        type: number
+    type: object
+  types.Interval:
+    properties:
+      full_width:
+        type: string
+      lower_bound:
+        type: number
+      upper_bound:
+        type: number
+    type: object
+  types.IntervalData:
+    properties:
+      expected_impermanent_loss:
+        type: number
+      expected_time_in_interval:
+        type: number
+      interval:
+        $ref: "#/definitions/types.Interval"
+      probability_to_stay_in_interval:
+        $ref: "#/definitions/types.StayInIntervalProbability"
+    type: object
+  types.LPBoundsResponse:
+    properties:
+      current_price:
+        type: number
+      data:
+        items:
+          $ref: "#/definitions/types.IntervalData"
+        type: array
+    type: object
+  types.LPProbabilitiesResponse:
+    properties:
+      current_price:
+        type: number
+      data:
+        $ref: "#/definitions/types.PriceProbabilityData"
+    type: object
+  types.LeaderboardItemV2:
+    properties:
+      coldkey:
+        type: string
+      ip_address:
+        type: string
+      neuron_uid:
+        type: integer
+      rewards:
+        type: number
+      updated_at:
+        type: string
+    type: object
+  types.LiquidationProbability:
+    properties:
+      long_liquidation_probability:
+        $ref: "#/definitions/types.HourlyProbability"
+      price_change:
+        type: string
+      short_liquidation_probability:
+        $ref: "#/definitions/types.HourlyProbability"
+    type: object
+  types.LiquidationProbabilityResponse:
+    properties:
+      current_price:
+        type: number
+      data:
+        items:
+          $ref: "#/definitions/types.LiquidationProbability"
+        type: array
+    type: object
+  types.MinerValidationResponse:
+    properties:
+      reason:
+        type: string
+      response_time:
+        type: string
+      validated:
+        type: boolean
+    type: object
+  types.OptionPricingResponse:
+    properties:
+      call_options:
+        additionalProperties:
+          type: number
+        type: object
+      current_price:
+        type: number
+      expiry_time:
+        type: string
+      put_options:
+        additionalProperties:
+          type: number
+        type: object
+    type: object
+  types.PercentileTyped:
+    properties:
+      "0.2":
+        type: number
+      "0.5":
+        type: number
+      "0.05":
+        type: number
+      "0.005":
+        type: number
+      "0.8":
+        type: number
+      "0.35":
+        type: number
+      "0.65":
+        type: number
+      "0.95":
+        type: number
+      "0.995":
+        type: number
+    type: object
+  types.PolymarketUpDownResponse:
+    properties:
+      best_ask_price:
+        type: number
+      best_ask_size:
+        type: number
+      best_bid_price:
+        type: number
+      best_bid_size:
+        type: number
+      current_outcome:
+        type: string
+      current_price:
+        type: number
+      current_time:
+        type: string
+      event_creation_time:
+        type: string
+      event_end_time:
+        type: string
+      event_start_time:
+        type: string
+      polymarket_last_trade_outcome:
+        type: string
+      polymarket_last_trade_price:
+        type: number
+      polymarket_last_trade_time:
+        type: string
+      polymarket_outcome:
+        type: string
+      polymarket_probability_up:
+        type: number
+      slug:
+        type: string
+      start_price:
+        type: number
+      synth_outcome:
+        type: string
+      synth_probability_up:
+        type: number
+    type: object
+  types.PredictionPercentiles:
+    properties:
+      current_price:
+        type: number
+      forecast_future:
+        $ref: "#/definitions/types.ForecastDataTyped"
+    type: object
+  types.PredictionResponse:
+    properties:
+      miner_uid:
+        type: integer
+      predictions:
+        items:
+          items:
+            type: number
+          type: array
+        type: array
+      start_time:
+        type: integer
+    type: object
+  types.PriceProbabilityData:
+    properties:
+      24h:
+        $ref: "#/definitions/types.ProbabilityDirection"
+    type: object
+  types.PriceRangeMarket:
+    properties:
+      best_ask_price:
+        type: number
+      best_ask_size:
+        type: number
+      best_bid_price:
+        type: number
+      best_bid_size:
+        type: number
+      cmp_type:
+        type: string
+      current_outcome:
+        type: integer
+      current_price:
+        type: number
+      current_time:
+        type: string
+      event_creation_time:
+        type: string
+      event_end_time:
+        type: string
+      event_start_time:
+        type: string
+      polymarket_last_trade_outcome:
+        type: integer
+      polymarket_last_trade_price:
+        type: number
+      polymarket_last_trade_time:
+        type: string
+      polymarket_outcome:
+        type: integer
+      polymarket_probability:
+        type: number
+      ref_prices:
+        items:
+          type: number
+        type: array
+      slug:
+        type: string
+      synth_outcome:
+        type: integer
+      synth_probability:
+        type: number
+      title:
+        type: string
+    type: object
+  types.PriceReturn:
+    properties:
+      price:
+        type: number
+      returns:
+        description: pointer to handle null values
+        type: number
+    type: object
+  types.ProbabilityDirection:
+    properties:
+      probability_above:
+        additionalProperties:
+          type: number
+        type: object
+      probability_below:
+        additionalProperties:
+          type: number
+        type: object
+    type: object
+  types.Realized:
+    properties:
+      average_volatility:
+        type: number
+      prices:
+        items:
+          $ref: "#/definitions/types.PriceReturn"
+        type: array
+      volatility:
+        description: pointer slice to handle null values
+        items:
+          type: number
+        type: array
+    type: object
+  types.StayInIntervalProbability:
+    properties:
+      "24":
+        type: number
+    type: object
+  types.ValidationScore:
+    properties:
+      asset:
+        type: string
+      crps:
+        type: number
+      miner_uid:
+        type: integer
+      prompt_score:
+        type: number
+      scored_time:
+        type: string
+      time_length:
+        type: integer
+    type: object
+  types.VolatilityResponse:
+    properties:
+      current_price:
+        type: number
+      forecast_future:
+        $ref: "#/definitions/types.Forecast"
+      forecast_past:
+        $ref: "#/definitions/types.Forecast"
+      realized:
+        $ref: "#/definitions/types.Realized"
+    type: object
 info:
-  title: Synth
-  version: "1.0"
-  description: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.
   contact:
     url: https://synthdata.co
+  description: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.
+  title: Synth API
+  version: "1.0"
+  x-logo:
+    url: /docs/assets/images/logo.svg
 paths:
   /insights/liquidation:
     get:
-      summary: Insight - Liquidation probability
-      description: Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure.
+      description: "Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.LiquidationProbabilityResponse"
+          schema:
+            $ref: "#/definitions/types.LiquidationProbabilityResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Liquidation probability
   /insights/lp-bounds:
     get:
-      summary: Insight - Liquidity provider bounds
-      description: Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.
+      description: "Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.LPBoundsResponse"
+          schema:
+            $ref: "#/definitions/types.LPBoundsResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Liquidity provider bounds
   /insights/lp-probabilities:
     get:
-      summary: Insight - Liquidity provider probabilities
-      description: Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure.
+      description: "Get the probability of an asset's price being above or below specific price targets over the next 24 hours. Returns probabilities for 11 upside and 11 downside price levels relative to the current price. Useful for options strike selection, Polymarket up/down contracts, and directional risk assessment. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.LPProbabilitiesResponse"
+          schema:
+            $ref: "#/definitions/types.LPProbabilitiesResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Liquidity provider probabilities
   /insights/option-pricing:
     get:
-      summary: Insight - Option pricing
-      description: Get SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options.
+      description: "Get SynthData-derived option prices for an asset. Returns theoretical call and put prices across a range of strike prices with expiry time, using SynthData's ensemble volatility forecasts. Compare against market-quoted premiums to identify mispriced options. Supported assets: BTC, ETH, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.OptionPricingResponse"
+          schema:
+            $ref: "#/definitions/types.OptionPricingResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Option pricing
   /insights/polymarket/range:
     get:
-      summary: Insight - Polymarket price range
-      description: Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets.
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, SOL, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: "#/components/schemas/types.PriceRangeMarket"
+          schema:
+            items:
+              $ref: "#/definitions/types.PriceRangeMarket"
+            type: array
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Polymarket price range
   /insights/polymarket/up-down/daily:
     get:
-      summary: Insight - Polymarket up/down daily
-      description: Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets.
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "Asset: ETH or BTC"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.PolymarketUpDownResponse"
+          schema:
+            $ref: "#/definitions/types.PolymarketUpDownResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Polymarket up/down daily
   /insights/polymarket/up-down/hourly:
     get:
-      summary: Insight - Polymarket up/down hourly
-      description: Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes.
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, SOL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.PolymarketUpDownResponse"
+          schema:
+            $ref: "#/definitions/types.PolymarketUpDownResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Polymarket up/down hourly
   /insights/volatility:
     get:
-      summary: Insight - Volatility
-      description: Get SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility.
+      description: It selects the top 'limit' miners from the meta-leaderboard to calculate the volatility.
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.VolatilityResponse"
+          schema:
+            $ref: "#/definitions/types.VolatilityResponse"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
+      summary: Insight - Volatility
   /prediction-percentiles:
     get:
-      summary: Prediction Percentiles - meta model from top 10 miners
-      description: Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.
+      description: "Get price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
       parameters:
-        - name: asset
+        - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
+          example: BTC
           in: query
-          description: "the symbol of the asset: BTC, ETH, XAU, SOL, SPYX, NVDAX, TSLAX, AAPLX, GOOGLX"
-          schema:
-            type: string
-        - name: days
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
           in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
           in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
           in: header
-          description: API key
+          name: Authorization
           required: true
-          schema:
-            type: string
+          type: string
+      produces:
+        - application/json
       responses:
         "200":
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/types.PredictionPercentiles"
+          schema:
+            $ref: "#/definitions/types.PredictionPercentiles"
         "400":
           description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
+          schema:
+            type: string
         "500":
           description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
-components:
-  schemas:
-    types.APIKey:
-      type: object
-      properties:
-        allowed_assets:
-          type: string
-        allowed_routes:
-          type: string
-        id:
-          type: integer
-        label:
-          type: string
-        part:
-          type: string
-        rate_limit:
-          type: number
-        role:
-          type: string
-        user_id:
-          type: string
-    types.APIKeyCreated:
-      type: object
-      properties:
-        allowed_assets:
-          type: string
-        allowed_routes:
-          type: string
-        id:
-          type: integer
-        key_plain_text:
-          type: string
-        label:
-          type: string
-        rate_limit:
-          type: number
-        role:
-          type: string
-        user_id:
-          type: string
-    types.CreateAPIKeyDTO:
-      type: object
-      properties:
-        allowed_assets:
-          type: string
-        allowed_routes:
-          type: string
-        label:
-          type: string
-        rate_limit:
-          type: number
-        role:
-          type: string
-    types.DistributedReward:
-      type: object
-      properties:
-        amount:
-          type: number
-        asset:
-          type: string
-    types.Forecast:
-      type: object
-      properties:
-        average_volatility:
-          type: number
-        volatility:
-          type: array
-          items:
-            type: number
-    types.ForecastDataTyped:
-      type: object
-      properties:
-        percentiles:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.PercentileTyped"
-    types.HourlyProbability:
-      type: object
-      properties:
-        "12":
-          type: number
-        "18":
-          type: number
-        "24":
-          type: number
-        "6":
-          type: number
-    types.Interval:
-      type: object
-      properties:
-        full_width:
-          type: string
-        lower_bound:
-          type: number
-        upper_bound:
-          type: number
-    types.IntervalData:
-      type: object
-      properties:
-        expected_impermanent_loss:
-          type: number
-        expected_time_in_interval:
-          type: number
-        interval:
-          $ref: "#/components/schemas/types.Interval"
-        probability_to_stay_in_interval:
-          $ref: "#/components/schemas/types.StayInIntervalProbability"
-    types.LPBoundsResponse:
-      type: object
-      properties:
-        current_price:
-          type: number
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.IntervalData"
-    types.LPProbabilitiesResponse:
-      type: object
-      properties:
-        current_price:
-          type: number
-        data:
-          $ref: "#/components/schemas/types.PriceProbabilityData"
-    types.LatestMinerRegistrationResponse:
-      type: object
-      properties:
-        last_registered_at:
-          type: string
-          example: "2025-06-24T12:12:00Z"
-        uid:
-          type: integer
-          example: 123
-    types.LeaderboardItem:
-      type: object
-      properties:
-        coldkey:
-          type: string
-        emission:
-          type: number
-        incentive:
-          type: number
-        ip_address:
-          type: string
-        neuron_uid:
-          type: integer
-        pruning_score:
-          type: number
-        rank:
-          type: number
-        stake:
-          type: number
-        updated_at:
-          type: string
-    types.LeaderboardItemV2:
-      type: object
-      properties:
-        coldkey:
-          type: string
-        ip_address:
-          type: string
-        neuron_uid:
-          type: integer
-        rewards:
-          type: number
-        updated_at:
-          type: string
-    types.LiquidationProbability:
-      type: object
-      properties:
-        long_liquidation_probability:
-          $ref: "#/components/schemas/types.HourlyProbability"
-        price_change:
-          type: string
-        short_liquidation_probability:
-          $ref: "#/components/schemas/types.HourlyProbability"
-    types.LiquidationProbabilityResponse:
-      type: object
-      properties:
-        current_price:
-          type: number
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.LiquidationProbability"
-    types.MinerRegistrationsResponse:
-      type: object
-      properties:
-        registrations:
-          type: array
-          items:
+          schema:
             type: string
-          example: ["2025-06-24T12:12:00Z", "2025-04-03T09:43:00Z"]
-        uid:
-          type: integer
-          example: 123
-    types.MinerValidationResponse:
-      type: object
-      properties:
-        reason:
-          type: string
-        response_time:
-          type: string
-        validated:
-          type: boolean
-    types.ModifyAPIKeyDTO:
-      type: object
-      properties:
-        allowed_assets:
-          type: string
-        allowed_routes:
-          type: string
-        id:
-          type: integer
-        label:
-          type: string
-        rate_limit:
-          type: number
-        role:
-          type: string
-    types.OptionPricingResponse:
-      type: object
-      properties:
-        call_options:
-          type: object
-          additionalProperties:
-            type: number
-        current_price:
-          type: number
-        expiry_time:
-          type: string
-        put_options:
-          type: object
-          additionalProperties:
-            type: number
-    types.PercentileTyped:
-      type: object
-      properties:
-        "0.005":
-          type: number
-        "0.05":
-          type: number
-        "0.2":
-          type: number
-        "0.35":
-          type: number
-        "0.5":
-          type: number
-        "0.65":
-          type: number
-        "0.8":
-          type: number
-        "0.95":
-          type: number
-        "0.995":
-          type: number
-    types.PolymarketUpDownResponse:
-      type: object
-      properties:
-        best_ask_price:
-          type: number
-        best_ask_size:
-          type: number
-        best_bid_price:
-          type: number
-        best_bid_size:
-          type: number
-        current_outcome:
-          type: string
-        current_price:
-          type: number
-        current_time:
-          type: string
-        event_creation_time:
-          type: string
-        event_end_time:
-          type: string
-        event_start_time:
-          type: string
-        polymarket_last_trade_outcome:
-          type: string
-        polymarket_last_trade_price:
-          type: number
-        polymarket_last_trade_time:
-          type: string
-        polymarket_outcome:
-          type: string
-        polymarket_probability_up:
-          type: number
-        slug:
-          type: string
-        start_price:
-          type: number
-        synth_outcome:
-          type: string
-        synth_probability_up:
-          type: number
-    types.PredictionItem:
-      type: object
-      properties:
-        price:
-          type: number
-        time:
-          type: string
-    types.PredictionPercentiles:
-      type: object
-      properties:
-        current_price:
-          type: number
-        forecast_future:
-          $ref: "#/components/schemas/types.ForecastDataTyped"
-    types.PredictionResponse:
-      type: object
-      properties:
-        miner_uid:
-          type: integer
-        predictions:
-          type: array
-          items:
-            type: array
-            items:
-              type: number
-        start_time:
-          type: integer
-    types.PredictionResponseV1:
-      type: object
-      properties:
-        asset:
-          type: string
-        miner_uid:
-          type: integer
-        num_simulations:
-          type: integer
-        prediction:
-          type: array
-          items:
-            type: array
-            items:
-              $ref: "#/components/schemas/types.PredictionItem"
-        start_time:
-          type: string
-        time_increment:
-          type: integer
-        time_length:
-          type: integer
-    types.PriceProbabilityData:
-      type: object
-      properties:
-        24h:
-          $ref: "#/components/schemas/types.ProbabilityDirection"
-    types.PriceRangeMarket:
-      type: object
-      properties:
-        best_ask_price:
-          type: number
-        best_ask_size:
-          type: number
-        best_bid_price:
-          type: number
-        best_bid_size:
-          type: number
-        cmp_type:
-          type: string
-        current_outcome:
-          type: integer
-        current_price:
-          type: number
-        current_time:
-          type: string
-        event_creation_time:
-          type: string
-        event_end_time:
-          type: string
-        event_start_time:
-          type: string
-        polymarket_last_trade_outcome:
-          type: integer
-        polymarket_last_trade_price:
-          type: number
-        polymarket_last_trade_time:
-          type: string
-        polymarket_outcome:
-          type: integer
-        polymarket_probability:
-          type: number
-        ref_prices:
-          type: array
-          items:
-            type: number
-        slug:
-          type: string
-        synth_outcome:
-          type: integer
-        synth_probability:
-          type: number
-        title:
-          type: string
-    types.PriceReturn:
-      type: object
-      properties:
-        price:
-          type: number
-        returns:
-          type: number
-          description: pointer to handle null values
-    types.ProbabilityDirection:
-      type: object
-      properties:
-        probability_above:
-          type: object
-          additionalProperties:
-            type: number
-        probability_below:
-          type: object
-          additionalProperties:
-            type: number
-    types.Realized:
-      type: object
-      properties:
-        average_volatility:
-          type: number
-        prices:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.PriceReturn"
-        volatility:
-          type: array
-          items:
-            type: number
-          description: pointer slice to handle null values
-    types.RewardsHistorical:
-      type: object
-      properties:
-        date:
-          type: string
-        rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-    types.RewardsPerAxons:
-      type: object
-      properties:
-        axon_ip:
-          type: string
-        cumulative_holding_rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-        cumulative_rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-        current_rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-        current_uids:
-          type: array
-          items:
-            type: integer
-        date:
-          type: string
-        miner_count:
-          type: integer
-        total_rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-    types.RewardsScore:
-      type: object
-      properties:
-        miner_uid:
-          type: integer
-        prompt_name:
-          type: string
-        reward_weight:
-          type: number
-        smoothed_score:
-          type: number
-        updated_at:
-          type: string
-    types.RewardsSum:
-      type: object
-      properties:
-        from:
-          type: string
-        rewards:
-          type: array
-          items:
-            $ref: "#/components/schemas/types.DistributedReward"
-        to:
-          type: string
-    types.StayInIntervalProbability:
-      type: object
-      properties:
-        "24":
-          type: number
-    types.ValidationScore:
-      type: object
-      properties:
-        asset:
-          type: string
-        crps:
-          type: number
-        miner_uid:
-          type: integer
-        prompt_score:
-          type: number
-        scored_time:
-          type: string
-        time_length:
-          type: integer
-    types.VolatilityResponse:
-      type: object
-      properties:
-        current_price:
-          type: number
-        forecast_future:
-          $ref: "#/components/schemas/types.Forecast"
-        forecast_past:
-          $ref: "#/components/schemas/types.Forecast"
-        realized:
-          $ref: "#/components/schemas/types.Realized"
+      summary: Prediction Percentiles - meta model from top 10 miners
+swagger: "2.0"

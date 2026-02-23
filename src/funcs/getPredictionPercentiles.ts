@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Prediction Percentiles - meta model from top 10 miners
  *
  * @remarks
- * Get price interval analysis for an asset over the next 24 hours. Returns price intervals with the probability of price staying within each interval, expected time in-range, and estimated impermanent loss. Useful for concentrated liquidity positioning, options strike selection, and range-bound trading strategies.
+ * Get price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.
  */
 export function getPredictionPercentiles(
   client$: SynthCore,
@@ -88,6 +88,7 @@ async function $do(
   const query$ = encodeFormQuery({
     "asset": payload$?.asset,
     "days": payload$?.days,
+    "horizon": payload$?.horizon,
     "limit": payload$?.limit,
   });
 

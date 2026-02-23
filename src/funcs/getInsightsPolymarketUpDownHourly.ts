@@ -29,7 +29,7 @@ import { Result } from "../types/fp.js";
  * Insight - Polymarket up/down hourly
  *
  * @remarks
- * Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes.
+ * Get SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.
  */
 export function getInsightsPolymarketUpDownHourly(
   client$: SynthCore,
@@ -90,6 +90,7 @@ async function $do(
   const query$ = encodeFormQuery({
     "asset": payload$?.asset,
     "days": payload$?.days,
+    "horizon": payload$?.horizon,
     "limit": payload$?.limit,
   });
 

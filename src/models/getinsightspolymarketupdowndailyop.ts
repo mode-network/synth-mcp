@@ -11,6 +11,7 @@ import {
 
 export type GetInsightsPolymarketUpDownDailyRequest = {
   asset?: string | undefined;
+  horizon?: string | undefined;
   days?: number | undefined;
   limit?: number | undefined;
 };
@@ -18,9 +19,14 @@ export type GetInsightsPolymarketUpDownDailyRequest = {
 export const GetInsightsPolymarketUpDownDailyRequest$zodSchema: z.ZodType<
   GetInsightsPolymarketUpDownDailyRequest
 > = z.object({
-  asset: z.string().describe("Asset: ETH or BTC").optional(),
+  asset: z.string().describe(
+    "Symbol of the asset: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL",
+  ).optional(),
   days: z.int().describe(
     "Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.",
+  ).optional(),
+  horizon: z.string().describe(
+    "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)",
   ).optional(),
   limit: z.int().describe(
     "Number of miners from the meta-leaderboard to use for the analysis (default is 10)",

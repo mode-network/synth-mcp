@@ -17,7 +17,7 @@ export const tool$getInsightsPolymarketUpDownDaily: ToolDefinition<
   name: "get-insights-polymarket-up-down-daily",
   description: `Insight - Polymarket up/down daily
 
-Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets.`,
+Get SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.`,
   annotations: {
     "title": "",
     "destructiveHint": false,
