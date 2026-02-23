@@ -3,7 +3,7 @@
   "name": "synth-mcp",
   "version": "0.0.11",
   "description": "",
-  "long_description": "SN50 | Synth API: The Synth API provides the latest & historical prediction rates as well as the current leaderboard.",
+  "long_description": "Synth API: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.",
   "author": {
     "name": "Speakeasy"
   },
@@ -29,7 +29,7 @@
     "synth",
     "mcp",
     "api",
-    "the"
+    "offers"
   ],
   "user_config": {
     "server_url": {
