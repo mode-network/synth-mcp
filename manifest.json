@@ -63,6 +63,10 @@
       "description": "Insight - Polymarket price range\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily price range contracts. Returns both synth and Polymarket probabilities per range, current outcome, and order book data. Compare to identify mispriced range bets. Supported assets: BTC, ETH, SOL, NVDA, GOOGL, TSLA, AAPL."
     },
     {
+      "name": "get-insights-polymarket-up-down-15min",
+      "description": "Insight - Polymarket up/down 15 minutes\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for 15 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
+    },
+    {
       "name": "get-insights-polymarket-up-down-daily",
       "description": "Insight - Polymarket up/down daily\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
     },
