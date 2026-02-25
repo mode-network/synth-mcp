@@ -22,8 +22,8 @@ import { tool$getInsightsPolymarketRange } from "./tools/getInsightsPolymarketRa
 import { tool$getInsightsPolymarketUpDown15min } from "./tools/getInsightsPolymarketUpDown15min.js";
 import { tool$getInsightsPolymarketUpDownDaily } from "./tools/getInsightsPolymarketUpDownDaily.js";
 import { tool$getInsightsPolymarketUpDownHourly } from "./tools/getInsightsPolymarketUpDownHourly.js";
+import { tool$getInsightsPredictionPercentiles } from "./tools/getInsightsPredictionPercentiles.js";
 import { tool$getInsightsVolatility } from "./tools/getInsightsVolatility.js";
-import { tool$getPredictionPercentiles } from "./tools/getPredictionPercentiles.js";
 
 export function createMCPServer(deps: {
   logger: ConsoleLogger;
@@ -36,7 +36,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Synth",
-    version: "0.0.13",
+    version: "0.0.14",
   });
 
   const getClient = deps.getSDK || (() =>
@@ -87,8 +87,8 @@ export function createMCPServer(deps: {
   tool(tool$getInsightsPolymarketUpDown15min);
   tool(tool$getInsightsPolymarketUpDownDaily);
   tool(tool$getInsightsPolymarketUpDownHourly);
+  tool(tool$getInsightsPredictionPercentiles);
   tool(tool$getInsightsVolatility);
-  tool(tool$getPredictionPercentiles);
 
   if (deps.dynamic) {
     registerDynamicTools(deps.logger, server, getClient, toolMap, scopes);

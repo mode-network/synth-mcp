@@ -408,6 +408,56 @@ paths:
             application/json:
               schema:
                 type: string
+  /insights/prediction-percentiles:
+    get:
+      summary: Prediction Percentiles - meta model from top 10 miners
+      description: 'Get price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.'
+      parameters:
+        - name: asset
+          in: query
+          description: 'Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL'
+          schema:
+            type: string
+        - name: horizon
+          in: query
+          description: 'Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.PredictionPercentiles'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
   /insights/volatility:
     get:
       summary: Insight - Volatility
@@ -446,56 +496,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/types.VolatilityResponse'
-        "400":
-          description: Bad Request
-          content:
-            application/json:
-              schema:
-                type: string
-        "500":
-          description: Internal Server Error
-          content:
-            application/json:
-              schema:
-                type: string
-  /prediction-percentiles:
-    get:
-      summary: Prediction Percentiles - meta model from top 10 miners
-      description: 'Get price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL.'
-      parameters:
-        - name: asset
-          in: query
-          description: 'Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL'
-          schema:
-            type: string
-        - name: horizon
-          in: query
-          description: 'Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)'
-          schema:
-            type: string
-        - name: days
-          in: query
-          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
-          schema:
-            type: integer
-        - name: limit
-          in: query
-          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
-          schema:
-            type: integer
-        - name: Authorization
-          in: header
-          description: API key
-          required: true
-          schema:
-            type: string
-      responses:
-        "200":
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/types.PredictionPercentiles'
         "400":
           description: Bad Request
           content:

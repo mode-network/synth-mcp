@@ -1,7 +1,7 @@
 {
   "manifest_version": "0.3",
   "name": "synth-mcp",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "",
   "long_description": "Synth: Synth API offers programmatic access to probabilistic price forecasts for Equities, Commodities and Cryptocurrencies.",
   "author": {
@@ -79,12 +79,12 @@
       "description": "Insight - Polymarket up/down hourly\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for hourly Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
     },
     {
-      "name": "get-insights-volatility",
-      "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the meta-leaderboard to calculate the volatility."
+      "name": "get-insights-prediction-percentiles",
+      "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
     },
     {
-      "name": "get-prediction-percentiles",
-      "description": "Prediction Percentiles - meta model from top 10 miners\n\nGet price distribution percentiles for an asset over the 24-hour forecast horizon. Returns predicted prices at 9 percentile levels (0.5th, 5th, 20th, 35th, 50th, 65th, 80th, 95th, 99.5th), giving the full probability distribution of expected price movements. Useful for position sizing, setting price targets, and understanding tail risk. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
+      "name": "get-insights-volatility",
+      "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the meta-leaderboard to calculate the volatility."
     }
   ]
 }
