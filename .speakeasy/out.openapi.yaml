@@ -258,6 +258,56 @@ paths:
             application/json:
               schema:
                 type: string
+  /insights/polymarket/up-down/15min:
+    get:
+      summary: Insight - Polymarket up/down 15 minutes
+      description: 'Get SynthData''s estimated fair probabilities alongside live Polymarket odds for 15 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL.'
+      parameters:
+        - name: asset
+          in: query
+          description: 'Symbol of the asset: BTC, ETH, SOL'
+          schema:
+            type: string
+        - name: horizon
+          in: query
+          description: 'Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)'
+          schema:
+            type: string
+        - name: days
+          in: query
+          description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          schema:
+            type: integer
+        - name: Authorization
+          in: header
+          description: API key
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/types.PolymarketUpDownResponse'
+        "400":
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: string
+        "500":
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                type: string
   /insights/polymarket/up-down/daily:
     get:
       summary: Insight - Polymarket up/down daily
@@ -320,7 +370,7 @@ paths:
             type: string
         - name: horizon
           in: query
-          description: 'Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)'
+          description: 'Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)'
           schema:
             type: string
         - name: days
