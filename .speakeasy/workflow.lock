@@ -1,9 +1,9 @@
-speakeasyVersion: 1.724.1
+speakeasyVersion: 1.729.0
 sources:
     Synth API:
         sourceNamespace: synth-mcp
-        sourceRevisionDigest: sha256:b67c54dcc5ac560d8258ac0d3d620000c18295856086ef38e03708dddca9a1ad
-        sourceBlobDigest: sha256:0a748f94b5a7c14adcae11c4ec3d97cfe405b75819b15846db402e826c99c689
+        sourceRevisionDigest: sha256:2b9f6f867de8503c9278c6f2c81344f456efcf040f33c060aacdb4b9278460b6
+        sourceBlobDigest: sha256:09732448ceef109c318135de42514f8e40ad283c0877ddf3875d9eb17fc10abc
         tags:
             - latest
             - "1.0"
@@ -11,8 +11,8 @@ targets:
     synth:
         source: Synth API
         sourceNamespace: synth-mcp
-        sourceRevisionDigest: sha256:b67c54dcc5ac560d8258ac0d3d620000c18295856086ef38e03708dddca9a1ad
-        sourceBlobDigest: sha256:0a748f94b5a7c14adcae11c4ec3d97cfe405b75819b15846db402e826c99c689
+        sourceRevisionDigest: sha256:2b9f6f867de8503c9278c6f2c81344f456efcf040f33c060aacdb4b9278460b6
+        sourceBlobDigest: sha256:09732448ceef109c318135de42514f8e40ad283c0877ddf3875d9eb17fc10abc
 workflow:
     workflowVersion: 1.0.0
     speakeasyVersion: latest

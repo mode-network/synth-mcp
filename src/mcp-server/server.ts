@@ -19,6 +19,7 @@ import { tool$getInsightsLpBounds } from "./tools/getInsightsLpBounds.js";
 import { tool$getInsightsLpProbabilities } from "./tools/getInsightsLpProbabilities.js";
 import { tool$getInsightsOptionPricing } from "./tools/getInsightsOptionPricing.js";
 import { tool$getInsightsPolymarketRange } from "./tools/getInsightsPolymarketRange.js";
+import { tool$getInsightsPolymarketUpDown15min } from "./tools/getInsightsPolymarketUpDown15min.js";
 import { tool$getInsightsPolymarketUpDownDaily } from "./tools/getInsightsPolymarketUpDownDaily.js";
 import { tool$getInsightsPolymarketUpDownHourly } from "./tools/getInsightsPolymarketUpDownHourly.js";
 import { tool$getInsightsVolatility } from "./tools/getInsightsVolatility.js";
@@ -35,7 +36,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Synth",
-    version: "0.0.12",
+    version: "0.0.13",
   });
 
   const getClient = deps.getSDK || (() =>
@@ -83,6 +84,7 @@ export function createMCPServer(deps: {
   tool(tool$getInsightsLpProbabilities);
   tool(tool$getInsightsOptionPricing);
   tool(tool$getInsightsPolymarketRange);
+  tool(tool$getInsightsPolymarketUpDown15min);
   tool(tool$getInsightsPolymarketUpDownDaily);
   tool(tool$getInsightsPolymarketUpDownHourly);
   tool(tool$getInsightsVolatility);
