@@ -24,7 +24,7 @@ export const GetInsightsPolymarketUpDownHourlyRequest$zodSchema: z.ZodType<
     "Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.",
   ).optional(),
   horizon: z.string().describe(
-    "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)",
+    "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)",
   ).optional(),
   limit: z.int().describe(
     "Number of miners from the meta-leaderboard to use for the analysis (default is 10)",
