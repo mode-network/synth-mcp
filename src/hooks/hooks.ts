@@ -3,7 +3,6 @@
  * @generated-id: a2463fc6f69b
  */
 
-import { initHooks } from "./registration.js";
 import {
   AfterErrorContext,
   AfterErrorHook,
@@ -48,7 +47,6 @@ export class SDKHooks implements Hooks {
         this.registerAfterErrorHook(hook);
       }
     }
-    initHooks(this);
   }
 
   registerSDKInitHook(hook: SDKInitHook) {

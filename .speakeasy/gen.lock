@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: aefbfd95-3898-417a-81f2-07292e60b44f
 management:
-  docChecksum: 5da4c0f7751345c6f30fdca64240081e
+  docChecksum: bb938b01745aa618440a4ae62c1c5ed3
   docVersion: "1.0"
-  speakeasyVersion: 1.729.0
-  generationVersion: 2.841.0
-  releaseVersion: 0.0.14
-  configChecksum: 0264342dd357594b63f2e57e988c909c
+  speakeasyVersion: 1.731.1
+  generationVersion: 2.844.3
+  releaseVersion: 0.0.15
+  configChecksum: 787f56b5014e12901e7fc8ac8c45cb0a
 persistentEdits:
-  generation_id: 1356b30a-f3e7-403a-b610-19e28a3e1b8b
-  pristine_commit_hash: 1c7bd67c76f1fbc3896500744cffab6e67a294ed
-  pristine_tree_hash: 9e50c27c2c769d8c7dcdbecac1ad294b33414c77
+  generation_id: 33ecf448-a2af-4279-8928-646acde0fba5
+  pristine_commit_hash: 22bb75c132147fb9565115a1e1d84b09da8905cf
+  pristine_tree_hash: 2fc836b845674ee1f837d215bfc181f6c9a78cee
 features:
   mcp-typescript:
     additionalDependencies: 0.1.0
-    core: 1.2.14
+    core: 1.2.15
     defaultEnabledRetries: 0.1.0
     globalSecurityCallbacks: 0.0.0
     globalServerURLs: 0.1.1
@@ -40,12 +40,12 @@ trackedFiles:
     pristine_git_object: 4f9e60a9462fc4def738d60c3aaadf8232ef185f
   manifest.json:
     id: ca642a226869
-    last_write_checksum: sha1:a6f8306d7fcec70e38ccb77c476b25e677da64de
-    pristine_git_object: e306c415838a1bc93288ec90ed7a6e067729b68f
+    last_write_checksum: sha1:432310374d65e790aa2d6896ab13ac265ce6d61a
+    pristine_git_object: 522884f7a101218cb25ec58e25626cff26f415ab
   package.json:
     id: 7030d0b2f71b
-    last_write_checksum: sha1:dc645a87b0b7878dba0d6d2eaf014075989976af
-    pristine_git_object: 81c8dceaa931d31143cd2b73daba60e34e11ba81
+    last_write_checksum: sha1:bd3ed46575ac3202829e3d3225c5238776d2789e
+    pristine_git_object: 6ed566925a7cf6e52b65c216f253c8be90418627
   src/core.ts:
     id: f431fdbcd144
     last_write_checksum: sha1:b8bee26e217d2a6cef11b011884a3e6ca4fa471a
@@ -74,6 +74,10 @@ trackedFiles:
     id: 1ee98541cc71
     last_write_checksum: sha1:f902360cc4e1805c29eed6c71ea4f355235fd43c
     pristine_git_object: 1256b5d6968be52861dc3fcfea6b1e7671061589
+  src/funcs/getInsightsPolymarketUpDown5min.ts:
+    id: ce6a8fb24e9f
+    last_write_checksum: sha1:2ec4bbd1bbc494780fea60d08a4628b70691838e
+    pristine_git_object: 3831dc1d2af0ba8b8791ce502447a15773774ba4
   src/funcs/getInsightsPolymarketUpDownDaily.ts:
     id: ef191c6656c9
     last_write_checksum: sha1:0169d594b4c52e7e8097bad2af7aeacf6cea0437
@@ -88,12 +92,12 @@ trackedFiles:
     pristine_git_object: 515d6a9d6bf0566f412e7f448c63dc266ca87969
   src/funcs/getInsightsVolatility.ts:
     id: a7a7c9b3a923
-    last_write_checksum: sha1:50b1aaa3c7d3f3ce35ccddbf8c562c18e24b891f
-    pristine_git_object: fa6adce1c48c9d34c2a3d5949f4156f0a8041b82
+    last_write_checksum: sha1:280a3489935719cc61bc71d7e672bca31708a083
+    pristine_git_object: 8706481331826041a73c3a2e1396582b70eca8cc
   src/hooks/hooks.ts:
     id: a2463fc6f69b
-    last_write_checksum: sha1:36c7bf5c31e0986fba9e0f9db28a769be7904ffd
-    pristine_git_object: 28c90f854c4e8bba492d873d391ea8d68ca6e009
+    last_write_checksum: sha1:07f57b2921d671cc3158934b5f646d5ad3eb6827
+    pristine_git_object: bc0fe32856eb2391fa876a7cdb5dae106d39522d
   src/hooks/types.ts:
     id: 2a02d86ec24f
     last_write_checksum: sha1:622c2ac820271766bc4010bfc3904738c4c5ed0f
@@ -108,8 +112,8 @@ trackedFiles:
     pristine_git_object: b45f432798e2151eee7f6eb4df628b7310942c01
   src/lib/config.ts:
     id: 320761608fb3
-    last_write_checksum: sha1:1236ecb41cb35430ec7571cfd07310cc929a73bd
-    pristine_git_object: ea85e8e494069a73b27dd7a84642bc2974fcb03b
+    last_write_checksum: sha1:a850e2aa69314254bdc96ef456330c43b65231dd
+    pristine_git_object: 65b38f7d1448dabf29df61ba8097b581a8c68927
   src/lib/dlv.ts:
     id: b1988214835a
     last_write_checksum: sha1:eaac763b22717206a6199104e0403ed17a4e2711
@@ -174,6 +178,14 @@ trackedFiles:
     id: 4ade0ef98b00
     last_write_checksum: sha1:328ffc5ed0eca56509bf2828264c3b2c87926e09
     pristine_git_object: ed4a1808d7da14f0f0bb0cf27cc7eb7414a3182c
+  src/mcp-server/cli/serve/command.ts:
+    id: 7cd4394c80e8
+    last_write_checksum: sha1:430e5cca78784eea3c4a6f4d873158feef27894e
+    pristine_git_object: 3fa72520cffb192d50efe846cc6fabdc2b76515f
+  src/mcp-server/cli/serve/impl.ts:
+    id: 03e83f226068
+    last_write_checksum: sha1:c8f808eb869a150280c433cd45bbd7f287c9d923
+    pristine_git_object: 73310ad95fcde4c6ff4747387c87d8ef1f24e5f3
   src/mcp-server/cli/start/command.ts:
     id: b3e53408ccb4
     last_write_checksum: sha1:8201bb27d0a8ade03cf07d2428da4bcd4c19de89
@@ -196,8 +208,8 @@ trackedFiles:
     pristine_git_object: cdc4b29578f38417d67b16a5866460c43c9b81a6
   src/mcp-server/mcp-server.ts:
     id: aabbc4ab07c1
-    last_write_checksum: sha1:cf803d4474a87f86b4c69d94a4c30e0671bffe48
-    pristine_git_object: a613270081a7e681aff399dafb06a0e7292460b4
+    last_write_checksum: sha1:9fd4256cf0a746e018ddb1cb7ffcc050902eedd7
+    pristine_git_object: e2aef655d29e6471b8f78681ed2daedff532205b
   src/mcp-server/prompts.ts:
     id: 26f3d73cbf31
     last_write_checksum: sha1:73fbd9fa7c8c4c8be08b0ae4de74243fb225ce92
@@ -212,8 +224,8 @@ trackedFiles:
     pristine_git_object: 524b864b4a0d515386ff3f42ed22463827039c06
   src/mcp-server/server.ts:
     id: 2784dd48e82a
-    last_write_checksum: sha1:518dee05b7468e1580c533f7b724577b2ac98718
-    pristine_git_object: f489c91e1340cd26941766e29cd786c0728a05dd
+    last_write_checksum: sha1:358f4318242beb767abb5d1f84b64ce77ce58aa2
+    pristine_git_object: cb814e03b19d947e882557d6e965b924d2962653
   src/mcp-server/shared.ts:
     id: 074e80d4be1e
     last_write_checksum: sha1:89d816c34ea71049cbf484f9704239e5372858f1
@@ -246,6 +258,10 @@ trackedFiles:
     id: c2d9a15e728e
     last_write_checksum: sha1:ab9e24e49dc0af839518dc10d0a883908273e65e
     pristine_git_object: 800578275b3eef85cb02210179dc33ffa4816e5e
+  src/mcp-server/tools/getInsightsPolymarketUpDown5min.ts:
+    id: 54db83170089
+    last_write_checksum: sha1:58e93b980a1bd138750470861f764924c52d3436
+    pristine_git_object: 4a92c42b1c9de63aab92e463edbdb79205d3dc2c
   src/mcp-server/tools/getInsightsPolymarketUpDownDaily.ts:
     id: 68d48f874d49
     last_write_checksum: sha1:229697151ccc8ef91ffb4c39dbacf3fea5d4676b
@@ -260,8 +276,8 @@ trackedFiles:
     pristine_git_object: 5be46effc09f6353c5cea485e93eeab58e59b441
   src/mcp-server/tools/getInsightsVolatility.ts:
     id: 236e430e069f
-    last_write_checksum: sha1:1fe5c7aa0ddcda5ae842eb1aaa53ff863d95e842
-    pristine_git_object: bf143a26f1aab14afa3b899b1ef2a7574a88919e
+    last_write_checksum: sha1:377e060a9607fdfc13cf89af0be968d221ee24d1
+    pristine_git_object: b09cdc76b40e1cf7f9efccfb2796668ca4bd4900
   src/models/errors/apierror.ts:
     id: e2280e075454
     last_write_checksum: sha1:b6927c28c3304c3afffb374d0b20e865c6bab933
@@ -298,6 +314,10 @@ trackedFiles:
     id: 9365856ae697
     last_write_checksum: sha1:6932ae63a19f9b3d71d55521fdec2748c5748f21
     pristine_git_object: 1c85c21a7a35c60f956cc1d3a705a8128e86cb13
+  src/models/getinsightspolymarketupdown5minop.ts:
+    id: f10f599e30d8
+    last_write_checksum: sha1:4d97112c4103707c45a478e456087d90bc91a590
+    pristine_git_object: cdd8d1630fe99b041ec40fc05bb74871b7ff462a
   src/models/getinsightspolymarketupdowndailyop.ts:
     id: 9454a94e059e
     last_write_checksum: sha1:474ff554b7f282978d37a759f057a5be93207b1f
@@ -396,8 +416,8 @@ trackedFiles:
     pristine_git_object: 73a5f25764717694174216fd4734c72ab2a3fff1
   src/tool-names.ts:
     id: a9977280f9eb
-    last_write_checksum: sha1:ca78fad504e501d2f098b04a643eb0145c5dd35e
-    pristine_git_object: eaf7c7595022ccf4aa76f1a8405cc22a88d64e08
+    last_write_checksum: sha1:12c69db74e625acc47db07f965abb2af2e8ebc2a
+    pristine_git_object: 4415c34c4d542482006eb094594b073f1920e4b9
   src/types/async.ts:
     id: fac8da972f86
     last_write_checksum: sha1:e2a7c53b428567587741f38e6da489f596de6227
@@ -641,6 +661,15 @@ examples:
           application/json: "<value>"
   get_/insights/prediction-percentiles:
     speakeasy-default-get-/insights/prediction-percentiles:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/polymarket/up-down/5min:
+    speakeasy-default-get-/insights/polymarket/up-down/5min:
       responses:
         "200":
           application/json: {}
