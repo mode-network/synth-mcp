@@ -20,6 +20,7 @@ import { tool$getInsightsLpProbabilities } from "./tools/getInsightsLpProbabilit
 import { tool$getInsightsOptionPricing } from "./tools/getInsightsOptionPricing.js";
 import { tool$getInsightsPolymarketRange } from "./tools/getInsightsPolymarketRange.js";
 import { tool$getInsightsPolymarketUpDown15min } from "./tools/getInsightsPolymarketUpDown15min.js";
+import { tool$getInsightsPolymarketUpDown5min } from "./tools/getInsightsPolymarketUpDown5min.js";
 import { tool$getInsightsPolymarketUpDownDaily } from "./tools/getInsightsPolymarketUpDownDaily.js";
 import { tool$getInsightsPolymarketUpDownHourly } from "./tools/getInsightsPolymarketUpDownHourly.js";
 import { tool$getInsightsPredictionPercentiles } from "./tools/getInsightsPredictionPercentiles.js";
@@ -85,6 +86,7 @@ export function createMCPServer(deps: {
   tool(tool$getInsightsOptionPricing);
   tool(tool$getInsightsPolymarketRange);
   tool(tool$getInsightsPolymarketUpDown15min);
+  tool(tool$getInsightsPolymarketUpDown5min);
   tool(tool$getInsightsPolymarketUpDownDaily);
   tool(tool$getInsightsPolymarketUpDownHourly);
   tool(tool$getInsightsPredictionPercentiles);

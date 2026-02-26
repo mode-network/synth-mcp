@@ -67,6 +67,10 @@
       "description": "Insight - Polymarket up/down 15 minutes\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for 15 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
     },
     {
+      "name": "get-insights-polymarket-up-down-5min",
+      "description": "Insight - Polymarket up/down 5 minutes\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for 5 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
+    },
+    {
       "name": "get-insights-polymarket-up-down-daily",
       "description": "Insight - Polymarket up/down daily\n\nGet SynthData's estimated fair probabilities alongside live Polymarket odds for daily Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
     },
@@ -80,7 +84,7 @@
     },
     {
       "name": "get-insights-volatility",
-      "description": "Insight - Volatility\n\nIt selects the top 'limit' miners from the meta-leaderboard to calculate the volatility."
+      "description": "Insight - Volatility\n\nGet SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility."
     }
   ]
 }
