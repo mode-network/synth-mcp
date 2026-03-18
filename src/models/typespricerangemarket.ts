@@ -17,6 +17,7 @@ export type TypesPriceRangeMarket = {
   event_creation_time?: string | undefined;
   event_end_time?: string | undefined;
   event_start_time?: string | undefined;
+  forecast_start_time?: string | undefined;
   polymarket_last_trade_outcome?: number | undefined;
   polymarket_last_trade_price?: number | undefined;
   polymarket_last_trade_time?: string | undefined;
@@ -42,6 +43,7 @@ export const TypesPriceRangeMarket$zodSchema: z.ZodType<TypesPriceRangeMarket> =
     event_creation_time: z.string().optional(),
     event_end_time: z.string().optional(),
     event_start_time: z.string().optional(),
+    forecast_start_time: z.string().optional(),
     polymarket_last_trade_outcome: z.int().optional(),
     polymarket_last_trade_price: z.number().optional(),
     polymarket_last_trade_time: z.string().optional(),

@@ -12,6 +12,7 @@ import {
 export type TypesLPProbabilitiesResponse = {
   current_price?: number | undefined;
   data?: TypesPriceProbabilityData | undefined;
+  forecast_start_time?: string | undefined;
 };
 
 export const TypesLPProbabilitiesResponse$zodSchema: z.ZodType<
@@ -19,4 +20,5 @@ export const TypesLPProbabilitiesResponse$zodSchema: z.ZodType<
 > = z.object({
   current_price: z.number().optional(),
   data: TypesPriceProbabilityData$zodSchema.optional(),
+  forecast_start_time: z.string().optional(),
 });

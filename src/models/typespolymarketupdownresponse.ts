@@ -16,6 +16,7 @@ export type TypesPolymarketUpDownResponse = {
   event_creation_time?: string | undefined;
   event_end_time?: string | undefined;
   event_start_time?: string | undefined;
+  forecast_start_time?: string | undefined;
   polymarket_last_trade_outcome?: string | undefined;
   polymarket_last_trade_price?: number | undefined;
   polymarket_last_trade_time?: string | undefined;
@@ -40,6 +41,7 @@ export const TypesPolymarketUpDownResponse$zodSchema: z.ZodType<
   event_creation_time: z.string().optional(),
   event_end_time: z.string().optional(),
   event_start_time: z.string().optional(),
+  forecast_start_time: z.string().optional(),
   polymarket_last_trade_outcome: z.string().optional(),
   polymarket_last_trade_price: z.number().optional(),
   polymarket_last_trade_time: z.string().optional(),

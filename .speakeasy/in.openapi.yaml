@@ -54,6 +54,8 @@ definitions:
         items:
           $ref: "#/definitions/types.IntervalData"
         type: array
+      forecast_start_time:
+        type: string
     type: object
   types.LPProbabilitiesResponse:
     properties:
@@ -61,6 +63,8 @@ definitions:
         type: number
       data:
         $ref: "#/definitions/types.PriceProbabilityData"
+      forecast_start_time:
+        type: string
     type: object
   types.LeaderboardItemV2:
     properties:
@@ -74,6 +78,39 @@ definitions:
         type: number
       updated_at:
         type: string
+    type: object
+  types.LimitlessMarket:
+    properties:
+      best_ask_price:
+        type: number
+      best_bid_price:
+        type: number
+      current_price:
+        type: number
+      current_time:
+        type: string
+      event_creation_time:
+        type: string
+      event_end_time:
+        type: string
+      event_outcome_prices:
+        items:
+          type: number
+        type: array
+      forecast_start_time:
+        type: string
+      market_outcome:
+        type: string
+      market_probability_up:
+        type: number
+      slug:
+        type: string
+      start_price:
+        type: number
+      synth_outcome:
+        type: string
+      synth_probability_up:
+        type: number
     type: object
   types.LiquidationProbability:
     properties:
@@ -92,6 +129,8 @@ definitions:
         items:
           $ref: "#/definitions/types.LiquidationProbability"
         type: array
+      forecast_start_time:
+        type: string
     type: object
   types.MinerValidationResponse:
     properties:
@@ -111,6 +150,8 @@ definitions:
       current_price:
         type: number
       expiry_time:
+        type: string
+      forecast_start_time:
         type: string
       put_options:
         additionalProperties:
@@ -159,6 +200,8 @@ definitions:
       event_end_time:
         type: string
       event_start_time:
+        type: string
+      forecast_start_time:
         type: string
       polymarket_last_trade_outcome:
         type: string
@@ -227,6 +270,8 @@ definitions:
       event_end_time:
         type: string
       event_start_time:
+        type: string
+      forecast_start_time:
         type: string
       polymarket_last_trade_outcome:
         type: integer
@@ -312,6 +357,8 @@ definitions:
         $ref: "#/definitions/types.Forecast"
       forecast_past:
         $ref: "#/definitions/types.Forecast"
+      forecast_start_time:
+        type: string
       realized:
         $ref: "#/definitions/types.Realized"
     type: object
@@ -324,6 +371,150 @@ info:
   x-logo:
     url: /docs/assets/images/logo.svg
 paths:
+  /insights/limitless/15min:
+    get:
+      description: "Get SynthData's estimated fair probabilities alongside live Limitless odds for 15 minutes contracts. Returns both synth and Limitless probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
+      parameters:
+        - description: "Symbol of the asset: BTC, ETH, SOL"
+          example: BTC
+          in: query
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)"
+          example: 1h
+          in: query
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
+          in: query
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
+          in: header
+          name: Authorization
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: "#/definitions/types.LimitlessMarket"
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Insight - Limitless 15 minutes
+  /insights/limitless/daily:
+    get:
+      description: "Get SynthData's estimated fair probabilities alongside live Limitless odds for daily contracts. Returns both synth and Limitless probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets. Supported assets: BTC, ETH, SOL."
+      parameters:
+        - description: "Symbol of the asset: BTC, ETH, SOL"
+          example: BTC
+          in: query
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)"
+          example: 24h
+          in: query
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
+          in: query
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
+          in: header
+          name: Authorization
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: "#/definitions/types.LimitlessMarket"
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Insight - Limitless daily
+  /insights/limitless/hourly:
+    get:
+      description: "Get SynthData's estimated fair probabilities alongside live Limitless odds for hourly contracts. Returns both synth and Limitless probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
+      parameters:
+        - description: "Symbol of the asset: BTC, ETH, SOL"
+          example: BTC
+          in: query
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)"
+          example: 1h
+          in: query
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
+          in: query
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
+          in: header
+          name: Authorization
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: "#/definitions/types.LimitlessMarket"
+            type: array
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Insight - Limitless hourly
   /insights/liquidation:
     get:
       description: "Get long and short liquidation probability estimates for an asset at various price levels. Returns the probability of liquidation within 6, 12, 18, and 24 hour windows for both long and short positions. Useful for assessing leverage risk, setting stop-loss levels, and managing margin exposure. Supported assets: BTC, ETH, XAU, SOL, SPY, NVDA, GOOGL, TSLA, AAPL."
@@ -338,7 +529,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -384,7 +575,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -430,7 +621,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -476,7 +667,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -522,7 +713,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -556,6 +747,52 @@ paths:
           schema:
             type: string
       summary: Insight - Polymarket price range
+  /insights/polymarket/up-down/5min:
+    get:
+      description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for 5 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
+      parameters:
+        - description: "Symbol of the asset: BTC, ETH, SOL"
+          example: BTC
+          in: query
+          name: asset
+          type: string
+        - description: "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 1h)"
+          example: 1h
+          in: query
+          name: horizon
+          type: string
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
+          example: 14
+          in: query
+          name: days
+          type: integer
+        - description: Number of miners from the meta-leaderboard to use for the analysis (default is 10)
+          example: 10
+          in: query
+          name: limit
+          type: integer
+        - description: API key
+          example: Apikey MY_API_KEY
+          in: header
+          name: Authorization
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: "#/definitions/types.PolymarketUpDownResponse"
+        "400":
+          description: Bad Request
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            type: string
+      summary: Insight - Polymarket up/down 5 minutes
   /insights/polymarket/up-down/15min:
     get:
       description: "Get SynthData's estimated fair probabilities alongside live Polymarket odds for 15 minutes Up/Down contracts. Returns both synth and Polymarket probabilities, current outcome, and order book data (best bid/ask). Compare to identify mispriced bets on shorter timeframes. Supported assets: BTC, ETH, SOL."
@@ -570,7 +807,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -616,7 +853,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -662,7 +899,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -708,7 +945,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
@@ -742,7 +979,7 @@ paths:
       summary: Prediction Percentiles - meta model from top 10 miners
   /insights/volatility:
     get:
-      description: It selects the top 'limit' miners from the meta-leaderboard to calculate the volatility.
+      description: Get SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility.
       parameters:
         - description: "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL"
           example: BTC
@@ -754,7 +991,7 @@ paths:
           in: query
           name: horizon
           type: string
-        - description: Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.
+        - description: Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.
           example: 14
           in: query
           name: days
