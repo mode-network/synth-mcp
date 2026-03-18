@@ -12,10 +12,12 @@ import {
 export type TypesLPBoundsResponse = {
   current_price?: number | undefined;
   data?: Array<TypesIntervalData> | undefined;
+  forecast_start_time?: string | undefined;
 };
 
 export const TypesLPBoundsResponse$zodSchema: z.ZodType<TypesLPBoundsResponse> =
   z.object({
     current_price: z.number().optional(),
     data: z.array(TypesIntervalData$zodSchema).optional(),
+    forecast_start_time: z.string().optional(),
   });
