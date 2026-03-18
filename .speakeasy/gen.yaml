@@ -16,8 +16,8 @@ generation:
     sharedNestedComponentsJan2026: true
     nameOverrideFeb2026: false
   auth:
-    oAuth2ClientCredentialsEnabled: true
-    oAuth2PasswordEnabled: true
+    oAuth2ClientCredentialsEnabled: false
+    oAuth2PasswordEnabled: false
     hoistGlobalSecurity: true
   inferSSEOverload: true
   sdkHooksConfigAccess: true
@@ -32,7 +32,7 @@ generation:
     generateNewTests: true
     skipResponseBodyAssertions: false
 mcp-typescript:
-  version: 0.0.14
+  version: 0.0.15
   additionalDependencies:
     dependencies: {}
     devDependencies: {}
