@@ -1,16 +1,16 @@
 lockVersion: 2.0.0
 id: aefbfd95-3898-417a-81f2-07292e60b44f
 management:
-  docChecksum: 5da4c0f7751345c6f30fdca64240081e
+  docChecksum: 50050c23c7d2eea1a37c5d24c8fc537b
   docVersion: "1.0"
   speakeasyVersion: 1.757.1
   generationVersion: 2.866.2
   releaseVersion: 0.0.15
   configChecksum: 787f56b5014e12901e7fc8ac8c45cb0a
 persistentEdits:
-  generation_id: 9ed464d8-140d-4729-9c75-fd52f0f92d3e
-  pristine_commit_hash: 56538b90f092911f440b90711cd36d9cd117e88f
-  pristine_tree_hash: 1af4c8ea03c0ae53835ff617be44d8fd56bdaa03
+  generation_id: 7ab0e05a-15cc-432c-99ee-196f01f96677
+  pristine_commit_hash: c51dd7e00c3ecb034d0e1face10477c714303dfd
+  pristine_tree_hash: 8dff5d1e04f9c2320779b992d1de36e78aa729d5
 features:
   mcp-typescript:
     additionalDependencies: 0.1.0
@@ -40,8 +40,8 @@ trackedFiles:
     pristine_git_object: 4f9e60a9462fc4def738d60c3aaadf8232ef185f
   manifest.json:
     id: ca642a226869
-    last_write_checksum: sha1:288e3c409c1a96192bd39935fe62b8eb3036a743
-    pristine_git_object: 5434876c049394cf9a952f9c0bc91cf30dfffd86
+    last_write_checksum: sha1:631ce486c4fb042c04c831ebfa9d62e90c0c3796
+    pristine_git_object: c030fda07ed36ced8466299e5cbc1a909226079d
   package.json:
     id: 7030d0b2f71b
     last_write_checksum: sha1:6d3be84be80602df7abb99566ac5cf8e9b44fb38
@@ -50,6 +50,18 @@ trackedFiles:
     id: f431fdbcd144
     last_write_checksum: sha1:b8bee26e217d2a6cef11b011884a3e6ca4fa471a
     pristine_git_object: 350b297ef7a3e282f7b6d6def78c7f6e9c20595c
+  src/funcs/getInsightsLimitless15min.ts:
+    id: 6babaa581005
+    last_write_checksum: sha1:e4d569ba1e60165473f40a7f24c862c8ebf9393c
+    pristine_git_object: 193738997ebd14d80907f64ce5cc9989b932f054
+  src/funcs/getInsightsLimitlessDaily.ts:
+    id: 1c57ea4f2e6f
+    last_write_checksum: sha1:703b069207961199ae39dc35a2f3d064bb561e78
+    pristine_git_object: e161c72813908196749a6ddd89710d8d4b401728
+  src/funcs/getInsightsLimitlessHourly.ts:
+    id: 7289d505dc3f
+    last_write_checksum: sha1:ce5c7c50c1029353b4bdd73ec73db8360b8c79f3
+    pristine_git_object: d02b47396ae2735b580427bbe695f0f17b5aefed
   src/funcs/getInsightsLiquidation.ts:
     id: 4cbc0068023c
     last_write_checksum: sha1:9a43af2b7890f5ac79bd13067618cbd077243105
@@ -74,6 +86,10 @@ trackedFiles:
     id: 1ee98541cc71
     last_write_checksum: sha1:f902360cc4e1805c29eed6c71ea4f355235fd43c
     pristine_git_object: 1256b5d6968be52861dc3fcfea6b1e7671061589
+  src/funcs/getInsightsPolymarketUpDown5min.ts:
+    id: ce6a8fb24e9f
+    last_write_checksum: sha1:2ec4bbd1bbc494780fea60d08a4628b70691838e
+    pristine_git_object: 3831dc1d2af0ba8b8791ce502447a15773774ba4
   src/funcs/getInsightsPolymarketUpDownDaily.ts:
     id: ef191c6656c9
     last_write_checksum: sha1:0169d594b4c52e7e8097bad2af7aeacf6cea0437
@@ -88,8 +104,8 @@ trackedFiles:
     pristine_git_object: 515d6a9d6bf0566f412e7f448c63dc266ca87969
   src/funcs/getInsightsVolatility.ts:
     id: a7a7c9b3a923
-    last_write_checksum: sha1:50b1aaa3c7d3f3ce35ccddbf8c562c18e24b891f
-    pristine_git_object: fa6adce1c48c9d34c2a3d5949f4156f0a8041b82
+    last_write_checksum: sha1:280a3489935719cc61bc71d7e672bca31708a083
+    pristine_git_object: 8706481331826041a73c3a2e1396582b70eca8cc
   src/hooks/hooks.ts:
     id: a2463fc6f69b
     last_write_checksum: sha1:07f57b2921d671cc3158934b5f646d5ad3eb6827
@@ -220,8 +236,8 @@ trackedFiles:
     pristine_git_object: 524b864b4a0d515386ff3f42ed22463827039c06
   src/mcp-server/server.ts:
     id: 2784dd48e82a
-    last_write_checksum: sha1:ef46740e47573a7f83dff38d9793311991d96ae5
-    pristine_git_object: 02a92dcbf1b3cce5f7a2e41b2d94dbca2d08f02f
+    last_write_checksum: sha1:54e3708a73362de3c3f504e9e2cf9b22ca44179b
+    pristine_git_object: eb883474b4b72fda303e0ef58d1b4fab9a85c1c2
   src/mcp-server/shared.ts:
     id: 074e80d4be1e
     last_write_checksum: sha1:89d816c34ea71049cbf484f9704239e5372858f1
@@ -230,6 +246,18 @@ trackedFiles:
     id: 654d5d1f2062
     last_write_checksum: sha1:475641ec228d72660d1442c661b82683f76bb313
     pristine_git_object: 06096329a74a12b7a97d4332918cbb88e6783ac6
+  src/mcp-server/tools/getInsightsLimitless15min.ts:
+    id: 2176ca44759b
+    last_write_checksum: sha1:6fe335e83ee674760486e0734e12be3b1b2b85a8
+    pristine_git_object: 56d2d216439cf9842893cc5c0394c400955f9f1a
+  src/mcp-server/tools/getInsightsLimitlessDaily.ts:
+    id: ffe682f0f808
+    last_write_checksum: sha1:f7dad80306382dbd375e0da443da79bc58ff2410
+    pristine_git_object: b1e4339370bb95ed8c169563d6b98641076baec0
+  src/mcp-server/tools/getInsightsLimitlessHourly.ts:
+    id: 120bef4dc6f6
+    last_write_checksum: sha1:75cf964d9b210c9ef15f0161429f0e95f6018bc7
+    pristine_git_object: e5ec2f60336bec364f929494f8b4f0f6281daa1f
   src/mcp-server/tools/getInsightsLiquidation.ts:
     id: 836207daae21
     last_write_checksum: sha1:4009375aaa3976da7eb697b66dd3ee70881cbbaa
@@ -254,6 +282,10 @@ trackedFiles:
     id: c2d9a15e728e
     last_write_checksum: sha1:ab9e24e49dc0af839518dc10d0a883908273e65e
     pristine_git_object: 800578275b3eef85cb02210179dc33ffa4816e5e
+  src/mcp-server/tools/getInsightsPolymarketUpDown5min.ts:
+    id: 54db83170089
+    last_write_checksum: sha1:58e93b980a1bd138750470861f764924c52d3436
+    pristine_git_object: 4a92c42b1c9de63aab92e463edbdb79205d3dc2c
   src/mcp-server/tools/getInsightsPolymarketUpDownDaily.ts:
     id: 68d48f874d49
     last_write_checksum: sha1:229697151ccc8ef91ffb4c39dbacf3fea5d4676b
@@ -268,8 +300,8 @@ trackedFiles:
     pristine_git_object: 5be46effc09f6353c5cea485e93eeab58e59b441
   src/mcp-server/tools/getInsightsVolatility.ts:
     id: 236e430e069f
-    last_write_checksum: sha1:1fe5c7aa0ddcda5ae842eb1aaa53ff863d95e842
-    pristine_git_object: bf143a26f1aab14afa3b899b1ef2a7574a88919e
+    last_write_checksum: sha1:377e060a9607fdfc13cf89af0be968d221ee24d1
+    pristine_git_object: b09cdc76b40e1cf7f9efccfb2796668ca4bd4900
   src/models/errors/apierror.ts:
     id: e2280e075454
     last_write_checksum: sha1:b6927c28c3304c3afffb374d0b20e865c6bab933
@@ -282,46 +314,62 @@ trackedFiles:
     id: fb6b2b49c445
     last_write_checksum: sha1:007cf5906a9195d49150c032fc710a38bf76c074
     pristine_git_object: 6e164d3e7edbc93fa65afff3b80ecb5044c9d273
+  src/models/getinsightslimitless15minop.ts:
+    id: 5cbebb1d73e0
+    last_write_checksum: sha1:86df5b235be97a670bda848678a6236692e53af9
+    pristine_git_object: 586e0b280653c3c334caec6169f3ad1e3bc1802c
+  src/models/getinsightslimitlessdailyop.ts:
+    id: 0035e41a98b9
+    last_write_checksum: sha1:ea4445dc6557d11f8378af5b4a05a4da5c1441fe
+    pristine_git_object: aeed193544754894394ecbc2d40805eb7a56bb69
+  src/models/getinsightslimitlesshourlyop.ts:
+    id: c1c031026011
+    last_write_checksum: sha1:fa45b3e73b6efb46f6d3c5f7953a3d6fd382196f
+    pristine_git_object: 1fecbb5e2b9c4f504edb73eaa89dd1c9fa08c8cf
   src/models/getinsightsliquidationop.ts:
     id: de46aeb04e42
-    last_write_checksum: sha1:90e71dc8cb276c75d1605a3c5472e3ed4ae12ae2
-    pristine_git_object: e12b2ee0f98133811b945da1ec0a84bb4a37fa8c
+    last_write_checksum: sha1:3eac6b6d1d7ba57fe39b876ab2c846573d21e246
+    pristine_git_object: 1040160ffe63df72876840600201ec04a91ade1c
   src/models/getinsightslpboundsop.ts:
     id: deaa17e70a78
-    last_write_checksum: sha1:840c20fb4acfc0dc8c00664ecebb5d1b08ec4a70
-    pristine_git_object: 03f51809ca7280d5933d192e102622b4cc3fc642
+    last_write_checksum: sha1:331eaf01c166ea0d1988c68fe84cbdeb8df0efa6
+    pristine_git_object: f5bad9418c0c4caa5579095e048313e0cfb7df31
   src/models/getinsightslpprobabilitiesop.ts:
     id: 1e3500bc08a4
-    last_write_checksum: sha1:85c96509403f42401c03224a0ffe394ec297b1c8
-    pristine_git_object: 631c198a75ad3a7aea7f75f57bcb6767ef53291d
+    last_write_checksum: sha1:5166a03a865566033c5b43f0b5258e76b7d78308
+    pristine_git_object: 6b51cbdda23c1ab706ebe9e4254d79d51f683495
   src/models/getinsightsoptionpricingop.ts:
     id: d34ee6640bd2
-    last_write_checksum: sha1:b713f3e2ca5fe3c8abc379dac02db0fc7b849a46
-    pristine_git_object: 2709cbd50b9553dc7b5384172f77a792c4ed925f
+    last_write_checksum: sha1:29e01263b1d3811f6cb539c0dad73acb16ae159b
+    pristine_git_object: 54c6e6b7b2be92cc608e8c48e770c3526ce8ddbf
   src/models/getinsightspolymarketrangeop.ts:
     id: 1e271dd44cbd
-    last_write_checksum: sha1:b921876e0e6bd6321559a120f9ff3cda2215b613
-    pristine_git_object: 7467d177a09cce34ad2e176b9838c1a98e4a4168
+    last_write_checksum: sha1:ca4f59ba8cc5480ec67f0c486c73107885cb6d76
+    pristine_git_object: 62233656286711480bf34383d638b4e644b10057
   src/models/getinsightspolymarketupdown15minop.ts:
     id: 9365856ae697
-    last_write_checksum: sha1:6932ae63a19f9b3d71d55521fdec2748c5748f21
-    pristine_git_object: 1c85c21a7a35c60f956cc1d3a705a8128e86cb13
+    last_write_checksum: sha1:322f17c7311896e46b18936ab1575bc307e9b6e7
+    pristine_git_object: 3564a5125e3a2c42ad729c76fdd10e3aeecc2bab
+  src/models/getinsightspolymarketupdown5minop.ts:
+    id: f10f599e30d8
+    last_write_checksum: sha1:338929832b07228fb1e8527b0114bebff8e5167c
+    pristine_git_object: 52f72d38330edefd6a3f49a8312fb6363b0acc1f
   src/models/getinsightspolymarketupdowndailyop.ts:
     id: 9454a94e059e
-    last_write_checksum: sha1:474ff554b7f282978d37a759f057a5be93207b1f
-    pristine_git_object: 9ebd9a700da19d4970fa2fe006971f9974538090
+    last_write_checksum: sha1:c6417bdfe383da30f1f699a84efa4a2ca97241a3
+    pristine_git_object: 39e349f095130c7fafef47f76e1bc68c738b1fe6
   src/models/getinsightspolymarketupdownhourlyop.ts:
     id: fc81f0e8562c
-    last_write_checksum: sha1:467e303ccadc24cc8c4a0fff0476c7b2fe4859c1
-    pristine_git_object: f14888d6da3b1deadebf00fb8617a09ca7cbe0fa
+    last_write_checksum: sha1:bd70512c45164230b1d8b82fe68d2feca69cf169
+    pristine_git_object: 7eb9313383e4df77b9ea2159efeb040a55a4397a
   src/models/getinsightspredictionpercentilesop.ts:
     id: 940742f12963
-    last_write_checksum: sha1:418e23f7e709afd19454bc40996c196830e80f2b
-    pristine_git_object: 6600a76e6bab8d1106757ce0c80e52d99e529182
+    last_write_checksum: sha1:670d7830aca5f7e55097599769e30faad49d289d
+    pristine_git_object: e74476e1996f1b5874b8f54286715e60ae576d42
   src/models/getinsightsvolatilityop.ts:
     id: f0d137fb07d6
-    last_write_checksum: sha1:1b79380ac662099478a36f753ea2da4ef38547c2
-    pristine_git_object: 07998119d1220c9019ab38173ed34278c90618fc
+    last_write_checksum: sha1:ceb52547dc31f2556ecf9999a0a8722381291719
+    pristine_git_object: 7afbadfd522c487cce1a5b5d3651ef90e62f2c30
   src/models/typesforecast.ts:
     id: 18c02bf6f06b
     last_write_checksum: sha1:e5393e3abf2836e08febc95b3594b8fe43bc1fed
@@ -342,34 +390,38 @@ trackedFiles:
     id: 5200cc42f571
     last_write_checksum: sha1:55ca4e2323303b965d46e2253c77dee8028e4dee
     pristine_git_object: e646882c0cd5694c4c242e4bd187048dfc5e31bd
+  src/models/typeslimitlessmarket.ts:
+    id: 07372bb92421
+    last_write_checksum: sha1:ce440448b01b70018441a842fa85ea7eb88d591d
+    pristine_git_object: 45fdbb4ff5d0fdc2f3186ae02ffe2f5bd3b126da
   src/models/typesliquidationprobability.ts:
     id: 5974c841306c
     last_write_checksum: sha1:d65ab85d9fb5f125ab702bde45162872a7440101
     pristine_git_object: 2bcc8333344dc7431e5c822dd46ea6ec2a63a55b
   src/models/typesliquidationprobabilityresponse.ts:
     id: 2565d6273f57
-    last_write_checksum: sha1:fd0312bd22ab88910f1ac1c86114a4b4a1220e63
-    pristine_git_object: 53d9dc11790b76c07521cc49c761f03ed42ec92b
+    last_write_checksum: sha1:f10d4bf944d761ee2371cae6d2bafb56118a1512
+    pristine_git_object: d8aa21a9c41e0da81b3b2bcfc6ffe1387e0a8a85
   src/models/typeslpboundsresponse.ts:
     id: 03f5f09a7b6a
-    last_write_checksum: sha1:f518289526d02dae499a06205b1b4d9751c4e957
-    pristine_git_object: 9ca2463cc455ab2b2c5284e53af4216d4a514502
+    last_write_checksum: sha1:9eb3dd1ae67ee9ec5e6f388c4ad5624d5e6c19f7
+    pristine_git_object: b693c106316cc39fece06fa89e655e55f4eda5cc
   src/models/typeslpprobabilitiesresponse.ts:
     id: 30309d983d43
-    last_write_checksum: sha1:55fd76edcc1bb8f837f1368dbba91a812a5a2ec4
-    pristine_git_object: 1bd19877e79df8317eef609955e86074e8b7420c
+    last_write_checksum: sha1:774c094d82cfa9f4f8e6fd462b6c37ddb13ff17d
+    pristine_git_object: 5037057f2fddf82d608dfd322a117ef64ea38487
   src/models/typesoptionpricingresponse.ts:
     id: d5cb59b03112
-    last_write_checksum: sha1:90783cbfca1c42de7e1304a34246521ed5701c5f
-    pristine_git_object: 87f77ba368e7a891a96e15c5fac52e065539d6cf
+    last_write_checksum: sha1:e5966713a0cf3dbf7aab301915d6c83874bf1fc8
+    pristine_git_object: 2e55fe489743ecb6d1bd20195d6e21801487d0d6
   src/models/typespercentiletyped.ts:
     id: c749758c8737
     last_write_checksum: sha1:a2662c2b065427f04c6cc1007f7ff092328b814c
     pristine_git_object: 38ffc3fde7eac3c4562a728a234f56e6c4ba6880
   src/models/typespolymarketupdownresponse.ts:
     id: 059d78bddc06
-    last_write_checksum: sha1:5055ff2d31d51822171658b3f1883e78c45ef7b7
-    pristine_git_object: bb54fa94987cbf6047c75244bf0a5189ced1f3a2
+    last_write_checksum: sha1:5a06457782970d08f924d25a52aa8bed9a9be9d8
+    pristine_git_object: b27ae9e0843d3d549ba101af219ad28e90fbe9d9
   src/models/typespredictionpercentiles.ts:
     id: f59fd7f5876e
     last_write_checksum: sha1:78a3eea5fbd4d3b0e56d14a6681605580538d08b
@@ -380,8 +432,8 @@ trackedFiles:
     pristine_git_object: 679e2a3ad05e160d5ef64065abfe648cf3391970
   src/models/typespricerangemarket.ts:
     id: ec83cb19212a
-    last_write_checksum: sha1:ab759f42c75cc3cf68ecbd5b1587f028f51a6421
-    pristine_git_object: f5bb7e26de4c9c2967a33b474b44c80f740c7020
+    last_write_checksum: sha1:2e738353b2dbc42bc8358efc2eb3bc65019f21f0
+    pristine_git_object: d436cf10bab836e976473ba6281e96a4634f0259
   src/models/typespricereturn.ts:
     id: 1e8d61a60be7
     last_write_checksum: sha1:5800ffeda298f34fb9304380a3eb4b2360bd07e0
@@ -400,12 +452,12 @@ trackedFiles:
     pristine_git_object: c0999fc3758c0d7b62b49459e1904d63f9d8d6db
   src/models/typesvolatilityresponse.ts:
     id: 92f8183f93af
-    last_write_checksum: sha1:935bab112ebc5cdb96af6c22706c92d4b603d747
-    pristine_git_object: 73a5f25764717694174216fd4734c72ab2a3fff1
+    last_write_checksum: sha1:22313a47c5480981cfba9f974c8ff748b62f0c42
+    pristine_git_object: 93930bc487346df54c3665d95ce896c83a06a248
   src/tool-names.ts:
     id: a9977280f9eb
-    last_write_checksum: sha1:ca78fad504e501d2f098b04a643eb0145c5dd35e
-    pristine_git_object: eaf7c7595022ccf4aa76f1a8405cc22a88d64e08
+    last_write_checksum: sha1:c524857bc682562aae79692d5d659cbe2e538d96
+    pristine_git_object: 1901438078090840759e1ff460ad8c29c78d634f
   src/types/async.ts:
     id: fac8da972f86
     last_write_checksum: sha1:e2a7c53b428567587741f38e6da489f596de6227
@@ -649,6 +701,42 @@ examples:
           application/json: "<value>"
   get_/insights/prediction-percentiles:
     speakeasy-default-get-/insights/prediction-percentiles:
+      responses:
+        "200":
+          application/json: {}
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/limitless/15min:
+    speakeasy-default-get-/insights/limitless/15min:
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/limitless/daily:
+    speakeasy-default-get-/insights/limitless/daily:
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/limitless/hourly:
+    speakeasy-default-get-/insights/limitless/hourly:
+      responses:
+        "200":
+          application/json: [{}]
+        "400":
+          application/json: "<value>"
+        "500":
+          application/json: "<value>"
+  get_/insights/polymarket/up-down/5min:
+    speakeasy-default-get-/insights/polymarket/up-down/5min:
       responses:
         "200":
           application/json: {}

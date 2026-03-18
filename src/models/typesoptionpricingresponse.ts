@@ -9,6 +9,7 @@ export type TypesOptionPricingResponse = {
   call_options?: { [k: string]: number } | undefined;
   current_price?: number | undefined;
   expiry_time?: string | undefined;
+  forecast_start_time?: string | undefined;
   put_options?: { [k: string]: number } | undefined;
 };
 
@@ -18,5 +19,6 @@ export const TypesOptionPricingResponse$zodSchema: z.ZodType<
   call_options: z.record(z.string(), z.number()).optional(),
   current_price: z.number().optional(),
   expiry_time: z.string().optional(),
+  forecast_start_time: z.string().optional(),
   put_options: z.record(z.string(), z.number()).optional(),
 });

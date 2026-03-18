@@ -11,6 +11,7 @@ export type TypesVolatilityResponse = {
   current_price?: number | undefined;
   forecast_future?: TypesForecast | undefined;
   forecast_past?: TypesForecast | undefined;
+  forecast_start_time?: string | undefined;
   realized?: TypesRealized | undefined;
 };
 
@@ -20,5 +21,6 @@ export const TypesVolatilityResponse$zodSchema: z.ZodType<
   current_price: z.number().optional(),
   forecast_future: TypesForecast$zodSchema.optional(),
   forecast_past: TypesForecast$zodSchema.optional(),
+  forecast_start_time: z.string().optional(),
   realized: TypesRealized$zodSchema.optional(),
 });

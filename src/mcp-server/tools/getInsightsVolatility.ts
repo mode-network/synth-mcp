@@ -15,7 +15,7 @@ export const tool$getInsightsVolatility: ToolDefinition<typeof args> = {
   name: "get-insights-volatility",
   description: `Insight - Volatility
 
-It selects the top 'limit' miners from the meta-leaderboard to calculate the volatility.`,
+Get SynthData's volatility forecasts for an asset. Returns expected volatility over the next 24 hours, along with historical realized volatility.`,
   annotations: {
     "title": "",
     "destructiveHint": false,

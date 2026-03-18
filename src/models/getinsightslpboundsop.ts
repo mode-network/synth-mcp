@@ -23,7 +23,7 @@ export const GetInsightsLpBoundsRequest$zodSchema: z.ZodType<
     "Symbol of the asset: BTC, ETH, XAU, SOL, JITOSOL, SPY, NVDA, GOOGL, TSLA, AAPL",
   ).optional(),
   days: z.int().describe(
-    "Number of days to aggregate for the meta-leaderboard (default is 14). See 'Leaderboard - Latest Meta-Leaderboard'.",
+    "Number of days to aggregate for the meta-leaderboard (default is 14 if horizon=24h, 6 if horizon=1h). See 'Leaderboard - Latest Meta-Leaderboard'.",
   ).optional(),
   horizon: z.string().describe(
     "Forecast horizon: 1h for next-hour or 24h for next-day price intervals (default: 24h)",
